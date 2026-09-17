@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cassie's Element</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐟</text></svg>" />
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="6f609b98-cf0a-4b3d-9c38-bc336a5c1080"></script>
+  <script>
+    if (window.location.hostname === "cassieselement.com" || window.location.hostname === "www.cassieselement.com") {
+      const umami = document.createElement("script");
+      umami.defer = true;
+      umami.src = "https://cloud.umami.is/script.js";
+      umami.dataset.websiteId = "6f609b98-cf0a-4b3d-9c38-bc336a5c1080";
+      document.head.appendChild(umami);
+    }
+  </script>
   <style>
     * { box-sizing: border-box; }
     body {
