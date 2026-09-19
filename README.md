@@ -18,7 +18,9 @@ Open http://localhost:8000. Umami only loads on `cassieselement.com` and `www.ca
 - `assets/marble-world.webp`: clean scenery without baked-in text, toys, or money.
 - `assets/toy-{white,pink,sunglasses}.webp`: three distinct transparent character images, rendered independently at different depths.
 - `assets/bear-{curious,wave,lounge,walking}.webp`: four new poses, including small open eyes, a true reclining sunglasses pose, and a tiny walking profile.
-- `assets/bear-{curious,wave,lounge,sunglasses,walking}-worn.webp`: the current five poses, with worn velour, fuzzy crochet, tiny eyes, short legs, and small feet. The pink bear sits; the sunglasses bear tucks its feet close to its belly.
+- `assets/bear-{curious,wave,lounge,sunglasses,walking}-worn.webp`: the previous five poses, with worn velour, fuzzy crochet, tiny eyes, short legs, and small feet. The pink bear sits; the sunglasses bear tucks its feet close to its belly.
+- `assets/bear-{curious,wave,lounge,sunglasses}-reference.webp`: the current four main poses, more closely matched to the supplied floating bear and heavenly scene: tiny stitched eyes, softer cheeks, relaxed limbs, and worn plush while retaining the existing tan, lavender, and dusty-pink palette.
+- `assets/bear-walking-worn.webp`: the existing miniature walking pose retained between experience entries.
 - `assets/money-sprayer-cursor.svg`: the locally drawn cursor, with its hotspot at the nozzle.
 - `assets/dollar-bill.webp`: a transparent photographic bill used for money rain and directed sprays.
 
