@@ -10,19 +10,31 @@
   <link rel="preload" as="image" href="assets/marble-world.webp" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff" href="assets/fonts/dm-sans-latin.woff" crossorigin>
   <link rel="preload" as="font" type="font/woff" href="assets/fonts/caveat-latin.woff" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=084608702321">
-  <script defer src="js/world.js"></script>
+  <link rel="stylesheet" href="css/site.css?v=9f1f6173d5b6">
+  <script defer src="js/world.js?v=4d00fac97fd6"></script>
   <script>if(["cassieselement.com","www.cassieselement.com"].includes(location.hostname)){const s=document.createElement("script");s.defer=true;s.src="https://cloud.umami.is/script.js";s.dataset.websiteId="6f609b98-cf0a-4b3d-9c38-bc336a5c1080";document.head.appendChild(s)}</script>
 </head>
 <body>
 <a class="skip-link" href="#about">Skip to résumé</a>
-<header class="hero" id="home" data-world="heavenly-v1">
+<header class="hero" id="home" data-world="heavenly-v2">
   <div class="world" aria-hidden="true">
     <div class="scene-layer scenery" data-depth="0.2"><img src="assets/marble-world.webp" alt="" width="1536" height="1024" fetchpriority="high"></div>
     <div class="scene-layer distant-view" data-depth="0.42"><img src="assets/marble-world.webp" alt="" width="1536" height="1024"></div>
+    <div class="scene-layer atmosphere" data-depth="0.2">
+      <svg viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <clipPath id="sky-window"><path d="M1153 0H1256V405H1018V200Q1020 78 1153 0Z"/></clipPath>
+          <clipPath id="pool-water"><path d="M1536 893Q1160 848 959 918Q828 966 997 1024H1536Z"/></clipPath>
+          <radialGradient id="cloud-fog"><stop stop-color="#fffdf9" stop-opacity=".85"/><stop offset="1" stop-color="#fffdf9" stop-opacity="0"/></radialGradient>
+        </defs>
+        <g clip-path="url(#sky-window)"><g class="clouds-moving"><ellipse cx="1090" cy="165" rx="138" ry="35" fill="url(#cloud-fog)"/><ellipse cx="1240" cy="311" rx="170" ry="42" fill="url(#cloud-fog)"/><ellipse cx="1280" cy="61" rx="108" ry="26" fill="url(#cloud-fog)"/></g></g>
+        <g clip-path="url(#pool-water)"><image class="water-reflection" href="assets/marble-world.webp" width="1536" height="1024"/><g class="water-ripples" fill="none" stroke="#fcf9eb" stroke-width="2"><path d="M930 932q90-10 160 0t160 0t160 0t160 0M905 951q90 10 160 0t160 0t160 0t160 0M925 978q70-10 150 0t160 0t160 0t160 0M960 1008q100 10 160 0t160 0t160 0t160 0"/></g></g>
+      </svg>
+    </div>
     <div class="water-light"></div><div class="sunlight"></div>
   </div>
   <div class="ambient-money" aria-hidden="true"></div>
+  <div class="money-shower" aria-hidden="true"></div>
   <div class="topbar">
     <a class="brand" href="#home" aria-label="Cassie's Element home">CASSIE’S ELEMENT</a>
     <nav class="topnav" aria-label="Main navigation"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
@@ -48,28 +60,33 @@
     <p class="hand-note">same bear,<br>new adventures ♡</p>
   </nav>
   <div class="toys" role="group" aria-label="Floating plush toys. Hover or tap to play.">
-    <button class="toy toy-pink-peek" data-depth="0.45" data-reaction="wiggle" aria-label="Poke the bear in the pink sweater"><span class="toy-motion"><img src="assets/toy-pink.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-white" data-depth="0.65" data-reaction="bounce" aria-label="Bounce the bear in the white hugs and kisses shirt"><span class="toy-motion"><img src="assets/toy-white.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-pink-peek" data-depth="0.45" data-reaction="wiggle" aria-label="Poke the bear in the pink sweater"><span class="toy-motion"><img src="assets/bear-wave.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-white" data-depth="0.65" data-reaction="bounce" aria-label="Bounce the bear in the white hugs and kisses shirt"><span class="toy-motion"><img src="assets/bear-curious.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
     <button class="toy toy-sunglasses" data-depth="0.7" data-reaction="wiggle" aria-label="Wiggle the bear in the lavender hat and sunglasses"><span class="toy-motion"><img src="assets/toy-sunglasses.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-distant" data-depth="0.15" data-reaction="bounce" aria-label="Bounce the little bear by the water"><span class="toy-motion"><img src="assets/toy-white.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-pink-right" data-depth="0.35" data-reaction="wiggle" aria-label="Poke the little pink sweater bear"><span class="toy-motion"><img src="assets/toy-pink.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-reclining" data-depth="0.8" data-reaction="wiggle" aria-label="Wake the lounging bear"><span class="toy-motion"><img src="assets/toy-sunglasses.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-near-left" data-depth="1.45" data-reaction="bounce" aria-label="Poke the big foreground bear"><span class="toy-motion"><img src="assets/toy-sunglasses.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-near-right" data-depth="1.25" data-reaction="wiggle" aria-label="Wiggle the foreground bear in the pink sweater"><span class="toy-motion"><img src="assets/toy-pink.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-distant" data-depth="0.15" data-reaction="bounce" aria-label="Bounce the little bear by the water"><span class="toy-motion"><img src="assets/bear-curious.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-pink-right" data-depth="0.35" data-reaction="wiggle" aria-label="Poke the little pink sweater bear"><span class="toy-motion"><img src="assets/bear-wave.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-reclining" data-depth="0.8" data-reaction="wiggle" aria-label="Poke the lounging bear in sunglasses"><span class="toy-motion"><img src="assets/bear-lounge.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-near-left" data-depth="1.45" data-reaction="bounce" aria-label="Poke the little foreground bear"><span class="toy-motion"><img src="assets/toy-sunglasses.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-near-right" data-depth="1.25" data-reaction="wiggle" aria-label="Wiggle the foreground bear in the pink sweater"><span class="toy-motion"><img src="assets/bear-wave.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
   </div>
   <div class="world-caption"><span class="status-dot" aria-hidden="true"></span><span>Based in San Francisco Bay Area</span><span class="caption-line" aria-hidden="true"></span><span>Open to opportunities worldwide</span></div>
-  <div class="world-controls"><span class="play-hint">psst… poke a bear</span><button id="motion-toggle" class="motion-toggle" aria-pressed="false" aria-label="Pause scene animation"><span class="pause-icon" aria-hidden="true"></span><span class="motion-label">Pause motion</span></button></div>
+
   <a class="scroll-cue" href="#about" aria-label="Scroll to résumé">Scroll to discover <span aria-hidden="true">↓</span></a>
   <div class="toy-bubble" aria-hidden="true"></div>
 </header>
-<div class="money-shower" aria-hidden="true"></div>
+<div class="world-controls"><span class="play-hint">psst… poke a bear</span><button id="motion-toggle" class="motion-toggle" aria-pressed="false" aria-label="Pause scene animation"><span class="pause-icon" aria-hidden="true"></span><span class="motion-label">Pause motion</span></button></div>
 <div id="world-status" class="sr-only" role="status" aria-live="polite"></div>
 <main data-resume-version="2026-09-18">
-<section id="about"><div class="section-title"><span>01 · About</span><h2>Growth, with range.</h2></div><p style="max-width:800px;margin:auto;text-align:center;font:500 27px/1.45 'Fraunces',serif">Growth and marketing leader with 10+ years scaling consumer, marketplace, and SMB businesses. I build 0→1 growth systems, test quickly, and turn data into measurable results.</p></section>
+<div class="page-atmosphere" aria-hidden="true"><div class="page-clouds"></div><div class="page-light"></div></div>
+<nav class="reading-nav" aria-label="Résumé chapters"><a class="reading-brand" href="#home">C<span>’</span>E</a><div><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#toolkit">Toolkit</a><a href="#contact">Contact</a></div><a class="reading-resume" href="assets/cassie-kwong-resume.pdf" download="Cassie-Kwong-Resume.pdf">Résumé ↓</a></nav>
+<section id="about"><div class="section-title"><span>01 · About</span><h2>Growth, with range.</h2></div><p class="about-copy">Growth and marketing leader with 10+ years scaling consumer, marketplace, and SMB businesses. I build 0→1 growth systems, test quickly, and turn data into measurable results.</p>
+<div class="proof-points" aria-label="Selected results"><a href="#work-beaverton"><strong>2,600%</strong><span>increase in web traffic</span><small>Beaverton Cabinet &amp; Stone ↗</small></a><a href="#work-papa"><strong>75–88%</strong><span>reduction in CPA</span><small>Papa Healthcare ↗</small></a><a href="#work-gopuff"><strong>15.1M</strong><span>combined viral video views</span><small>GoPuff ↗</small></a></div>
+<a class="chapter-companion companion-about" href="#projects" aria-label="Follow the little bear to selected projects"><img src="assets/bear-wave.webp" alt="" width="160" height="160" loading="lazy"><span>come see what I’ve made ↗</span></a>
+</section>
 <section id="experience">
 <div class="section-title"><span>02 · Experience</span><h2>Where I've built.</h2></div>
 <div class="timeline">
-<article class="job" data-resume-company="Beaverton Cabinet &amp; Stone">
+<article class="job" id="work-beaverton" data-resume-company="Beaverton Cabinet &amp; Stone">
   <div class="job-head"><div><h3>Marketing and Operations Director</h3><div class="company">Beaverton Cabinet &amp; Stone</div></div><div class="job-meta"><div class="date">October 2024 – Present</div><div class="job-location">Beaverton, CA</div></div></div>
   <ul>
     <li>Rebuilt the company website (<a href="https://beavertoncabinets.com">beavertoncabinets.com</a>) and finetuned SEO, GEO, and AIO, resulting in a 2,600% increase in web traffic.</li>
@@ -79,7 +96,7 @@
     <li>Designed a custom AI executive advisory system built on an agentic MCP server architecture; integrated sentiment analysis to evaluate real-time market trends and guide strategic decision-making across expansion initiatives.</li>
   </ul>
 </article>
-<article class="job" data-resume-company="Papa Healthcare">
+<article class="job" id="work-papa" data-resume-company="Papa Healthcare">
   <div class="job-head"><div><h3>Senior Growth Marketing Manager</h3><div class="company">Papa Healthcare</div></div><div class="job-meta"><div class="date">March 2023 – September 2024</div><div class="job-location">Remote, CA</div></div></div>
   <ul>
     <li>Built dashboards that enabled key stakeholders to view acquisition trends and metrics easily, and reported on monthly financial snapshots, analyzing performance against budgets and spending trends to identify optimization opportunities.</li>
@@ -88,7 +105,7 @@
     <li>Guided engineers and the SEM team to improve organic rankings on relevant pages by 40%, while handling all creative, copy, analytics, and setup as a one-person acquisition team across new channels and audiences.</li>
   </ul>
 </article>
-<article class="job" data-resume-company="Varo Bank / Varo Money">
+<article class="job" id="work-varo" data-resume-company="Varo Bank / Varo Money">
   <div class="job-head"><div><h3>User Acquisition Manager</h3><div class="company">Varo Bank / Varo Money</div></div><div class="job-meta"><div class="date">October 2021 – August 2022</div><div class="job-location">San Francisco, CA</div></div></div>
   <ul>
     <li>Designed multi-channel paid media setup to streamline continuous learning and optimization.</li>
@@ -98,7 +115,7 @@
     <li>Owned over $3.6M+ per month in ad budgets for Facebook, Snapchat, AppLovin &#x27;, Feedmob, and other mobile display platforms.</li>
   </ul>
 </article>
-<article class="job" data-resume-company="GoPuff / GoBrands, Inc.">
+<article class="job" id="work-gopuff" data-resume-company="GoPuff / GoBrands, Inc.">
   <div class="job-head"><div><h3>Growth Marketing Manager</h3><div class="company">GoPuff / GoBrands, Inc.</div></div><div class="job-meta"><div class="date">January 2020 – April 2021</div><div class="job-location">San Francisco, CA</div></div></div>
   <ul>
     <li>Designed marketing and operations teams&#x27; Looker dashboards to track best-selling products, creative performance, and new users WOW across paid social and DSP channels, enabling efficient campaign optimization and performance research.</li>
@@ -113,7 +130,8 @@
 </div>
 </section>
 <section id="projects">
-<div class="section-title"><span>03 · Selected projects</span><h2>Things I've grown.</h2></div>
+<div class="section-title"><span>03 · Selected projects</span><h2>Things I've grown.</h2><p class="section-note">A few more corners of my world.</p></div>
+<a class="chapter-companion companion-projects" href="#toolkit" aria-label="Follow the lounging bear to the toolkit"><img src="assets/bear-lounge.webp" alt="" width="180" height="95" loading="lazy"><span>the tools behind the ideas ↓</span></a>
 <div class="projects">
 <div class="card"><div class="tag">Founder · Consumer</div><h3>Mighty Buns Athletics</h3><p>Built a consumer fitness brand from concept to market across product, supply chain, Shopify, Amazon, acquisition, and influencers; ranked top 5% of Shopify businesses launched that July.</p></div>
 <div class="card"><div class="tag">Consulting · Staffing</div><h3>Goodwrx</h3><div class="project-role">Senior Marketing Consultant (Part-Time / Side Consulting)</div><p>100% hit rate on event staffing acquisition targets from paid social, search, and job posting platforms; managed ad budgets dynamically; overhauled Goodwrx’s underperforming landing page into an active lead generation asset.</p></div>
@@ -145,9 +163,9 @@
   </ul>
 </div>
 </section>
-<section id="contact" class="contact"><div class="section-title"><span>05 · Contact</span></div><h2>Let's make something grow.</h2><p class="contact-name">Cassie J Kwong</p>
+<section id="contact" class="contact"><div class="contact-pool" aria-hidden="true"></div><div class="section-title"><span>05 · Contact</span></div><h2>Let's make something grow.</h2><p class="contact-name">Cassie J Kwong</p>
 <div class="contact-links"><a href="mailto:cassie.kwong@gmail.com">cassie.kwong@gmail.com</a><a href="tel:+14084206980">(408) 420-6980</a><a href="https://www.linkedin.com/in/cassiejkwong">LinkedIn</a></div>
-<a class="resume-download" href="assets/cassie-kwong-resume.pdf" download="Cassie-Kwong-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a></section></main><footer>Cassie Kwong © 2026 · built with curiosity, data & a little Pooh ♡</footer>
+<a class="resume-download" href="assets/cassie-kwong-resume.pdf" download="Cassie-Kwong-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a><a class="chapter-companion companion-contact" href="#home" aria-label="Follow the curious bear back to the top"><img src="assets/bear-curious.webp" alt="" width="120" height="120" loading="lazy"><span>back to daydreaming ↑</span></a></section></main><footer>Cassie Kwong © 2026 · built with curiosity, data & a little Pooh ♡</footer>
 
 </body>
 </html>

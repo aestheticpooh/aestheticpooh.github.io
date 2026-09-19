@@ -11,6 +11,9 @@
   const shower = document.querySelector('.money-shower');
   const ambient = document.querySelector('.ambient-money');
   const layers = [...document.querySelectorAll('.scene-layer')];
+  const clouds = document.querySelector('.clouds-moving');
+  const reflection = document.querySelector('.water-reflection');
+  const ripples = document.querySelector('.water-ripples');
   const billSources = ['assets/dollar-bill.webp'];
   const toys = [...document.querySelectorAll('.toy')].map((el, i) => ({
     el, inner: el.querySelector('.toy-motion'), phase: i * 1.77,
@@ -30,16 +33,18 @@
   let lastPoke = 0;
   const pointer = { x: 0, y: 0, active: false };
   const liveBills = new Set();
+  const visibleLanes = new Set();
+  let walker = null;
+  let walkerTimer = 0;
+  let copyZones = [];
 
   // Positions leave the copy and navigation readable while framing the scene.
   const billPositions = [
-    [-2, 8, 11, -32, 1.5], [25, -3, 11, -45, 0], [28, 16, 7, 17, 0],
-    [43, 8, 7, -27, 0], [55, 8, 7, 31, 0], [67, 1, 10, -34, .6],
-    [78, 13, 8, 23, .1], [61, 24, 9, 41, 0], [71, 36, 5, -30, .3],
-    [1, 45, 7, -25, .9], [30, 39, 8, -19, 0], [20, 50, 11, -47, .5],
-    [36, 49, 6, 32, 0], [43, 71, 10, 42, .3], [54, 71, 6, -26, 0],
-    [65, 61, 8, 9, .1], [84, 70, 8, -55, .2], [64, 87, 12, -24, 1],
-    [24, 87, 14, -32, 2], [48, 99, 15, 22, 2], [88, 92, 11, 42, 1.4],
+    [-3, 13, 8, -32, .7], [27, -3, 7, -45, .3], [45, 12, 5, -27, 0],
+    [60, 10, 6, 31, 0], [76, 13, 5, 23, .1], [71, 39, 4, -30, .2],
+    [-3, 62, 6, -25, .6], [35, 66, 5, 32, 0], [44, 78, 6, 42, .2],
+    [60, 70, 4, -26, 0], [78, 82, 6, -38, .2], [58, 90, 8, -24, .5],
+    [21, 85, 6, -32, .6], [47, 99, 8, 22, .8],
   ];
   const bills = billPositions.map(([x, y, w, angle, blur], i) => {
     const el = document.createElement('div');
@@ -52,11 +57,26 @@
     el.append(img);
     ambient.append(el);
     el.style.transform = `rotate(${angle}deg)`;
-    return { el, angle, phase: i * 1.9, depth: .3 + (w / 12) };
+    return { el, angle, x, y, phase: i * 1.9, depth: .3 + (w / 12) };
   });
 
   function measure() {
     rect = hero.getBoundingClientRect();
+    copyZones = [...hero.querySelectorAll('.topbar,.intro,.identity,.chapter-nav,.world-caption')]
+      .filter(el => el.offsetWidth).map(el => {
+        const r = el.getBoundingClientRect();
+        return { left: r.left - rect.left - 22, right: r.right - rect.left + 22,
+          top: r.top - rect.top - (el.classList.contains('identity') ? 55 : 18), bottom: r.bottom - rect.top + 18 };
+      });
+    // Keep each bill's entire drift envelope out of the typography.
+    bills.forEach(b => {
+      const w = b.el.offsetWidth;
+      const radius = w * .58 + 26;
+      const x = b.x / 100 * rect.width + w / 2;
+      const y = b.y / 100 * rect.height + w / 4.8;
+      const obscures = copyZones.some(z => x + radius > z.left && x - radius < z.right && y + radius > z.top && y - radius < z.bottom);
+      b.el.classList.toggle('is-obscuring', obscures);
+    });
     toys.forEach(t => {
       const r = t.el.getBoundingClientRect();
       t.cx = r.left - rect.left + r.width / 2;
@@ -81,6 +101,11 @@
     const dt = Math.min((now - (last || now)) / 16.667, 2);
     last = now;
     clock += dt / 60;
+    // Drive SVG scenery with the same clock as the toys so pausing is exact.
+    clouds.style.transform = `translateX(${(Math.sin(clock * .06) * 45).toFixed(2)}px)`;
+    reflection.style.transform = `translate(${(Math.sin(clock * .7) * 2).toFixed(2)}px,${(Math.cos(clock * .55) * 1.5).toFixed(2)}px) scale(1.003,${(1.01 + Math.sin(clock * .45) * .004).toFixed(4)})`;
+    ripples.style.transform = `translate(${(Math.sin(clock * .4) * 15).toFixed(2)}px,${(Math.sin(clock * .6) * 4).toFixed(2)}px)`;
+    ripples.style.opacity = (.22 + Math.sin(clock * .8) * .1).toFixed(3);
     const targetX = pointer.active ? (pointer.x / rect.width - .5) * 2 : 0;
     const targetY = pointer.active ? (pointer.y / rect.height - .5) * 2 : 0;
     sceneX += (targetX - sceneX) * .045 * dt;
@@ -114,6 +139,8 @@
       const x = t.x - sceneX * 16 * t.depth;
       const y = t.y + bob - sceneY * 11 * t.depth;
       t.inner.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) rotate(calc(var(--rotation) + ${(t.angle + sway).toFixed(2)}deg))`;
+      t.el.style.setProperty('--shadow-x', `${(x * .35).toFixed(1)}px`);
+      t.el.style.setProperty('--shadow-scale', (1 - Math.max(-.1, Math.min(.18, y * -.006))).toFixed(3));
     });
     bills.forEach(b => {
       const x = Math.sin(clock * .38 + b.phase) * 9 - sceneX * 12 * b.depth;
@@ -134,24 +161,46 @@
     frame = 0;
     last = 0;
   }
+  function syncAmbientAnimations() {
+    // Explicitly sync the browser's animation timelines as well as CSS state.
+    // Ambient light and the atmosphere below the hero share the global control.
+    document.getAnimations().forEach(animation => {
+      if (!(animation instanceof CSSAnimation)) return;
+      const target = animation.effect?.target;
+      if (!target?.closest('.world,.page-atmosphere,.contact-pool,.tiny-walker')) return;
+      const shouldPause = paused || document.hidden || (!!target.closest('.hero') && !visible);
+      if (shouldPause) animation.pause();
+      else if (animation.playState === 'paused') animation.play();
+    });
+  }
   function applyMotion() {
     hero.classList.toggle('is-paused', paused);
+    document.body.classList.toggle('is-paused', paused);
     motionButton.setAttribute('aria-pressed', String(paused));
     motionButton.setAttribute('aria-label', paused ? 'Resume scene animation' : 'Pause scene animation');
     motionButton.querySelector('.motion-label').textContent = paused ? 'Resume motion' : 'Pause motion';
-    liveBills.forEach(b => { if (paused) b.animation.pause(); else b.animation.play(); });
+    liveBills.forEach(b => { if (paused || !visible || document.hidden) b.animation.pause(); else b.animation.play(); });
+    syncWalkers();
+    syncAmbientAnimations();
     if (paused) stop(); else start();
   }
   motionButton.addEventListener('click', () => { paused = !paused; applyMotion(); });
   reduced.addEventListener('change', e => { paused = e.matches; applyMotion(); });
   new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting;
+    hero.classList.toggle('is-offscreen', !visible);
+    document.body.classList.toggle('reading', !visible);
+    syncAmbientAnimations();
+    liveBills.forEach(b => { if (paused || !visible || document.hidden) b.animation.pause(); else b.animation.play(); });
     if (visible) { measure(); start(); } else { pointer.active = false; stop(); }
   }, { threshold: 0 }).observe(hero);
   document.addEventListener('visibilitychange', () => {
+    document.body.classList.toggle('is-hidden', document.hidden);
     if (document.hidden) stop(); else start();
+    syncWalkers();
+    syncAmbientAnimations();
     liveBills.forEach(b => {
-      if (document.hidden || paused) b.animation.pause(); else b.animation.play();
+      if (document.hidden || paused || !visible) b.animation.pause(); else b.animation.play();
     });
   });
 
@@ -201,8 +250,8 @@
     if (now - lastRain < 600) return;
     lastRain = now;
     const still = paused || reduced.matches;
-    const count = still ? 6 : (innerWidth < 761 ? 18 : 32);
-    const available = Math.max(0, 80 - liveBills.size);
+    const count = still ? 4 : (innerWidth < 761 ? 12 : 22);
+    const available = Math.max(0, 60 - liveBills.size);
     for (let i = 0; i < Math.min(count, available); i++) {
       const el = document.createElement('span');
       el.className = 'falling-bill';
@@ -213,17 +262,20 @@
       const w = (innerWidth < 761 ? 55 : 70) + Math.random() * 62;
       el.style.width = `${w}px`;
       shower.append(el);
-      const x = Math.random() * (innerWidth - w);
+      const x = Math.random() * (rect.width - w);
       const drift = (Math.random() - .5) * 220;
       const spin = Math.random() * 150 - 75;
       let animation;
       if (still) {
-        el.style.transform = `translate(${x}px,${70 + Math.random() * (innerHeight * .7)}px) rotate(${spin}deg)`;
+        el.style.transform = `translate(${x}px,${rect.height * .7 + Math.random() * rect.height * .15}px) rotate(${spin}deg)`;
         animation = el.animate([{ opacity: 0 }, { opacity: 1, offset: .2 }, { opacity: 1, offset: .75 }, { opacity: 0 }], { duration: 1600, easing: 'ease-out' });
       } else {
         const frames = Array.from({ length: 7 }, (_, j) => {
           const p = j / 6;
-          return { transform: `translate3d(${x + drift * p + Math.sin(p * 8) * 25}px,${-150 + (innerHeight + 320) * p}px,0) rotateZ(${spin + p * 210}deg) rotateY(${Math.sin(p * 10 + i) * 65}deg) rotateX(${Math.cos(p * 8) * 25}deg)`, opacity: p === 1 ? 0 : 1 };
+          const px = x + drift * p + Math.sin(p * 8) * 25;
+          const py = -150 + (rect.height + 320) * p;
+          const behindCopy = copyZones.some(z => px + w > z.left && px < z.right && py + w * .6 > z.top && py < z.bottom);
+          return { transform: `translate3d(${px}px,${py}px,0) rotateZ(${spin + p * 210}deg) rotateY(${Math.sin(p * 10 + i) * 65}deg) rotateX(${Math.cos(p * 8) * 25}deg)`, opacity: p === 1 || behindCopy ? 0 : .85 };
         });
         animation = el.animate(frames, { duration: 4800 + Math.random() * 2000, delay: Math.random() * 1400, easing: 'linear', fill: 'both' });
       }
@@ -235,6 +287,85 @@
     status.textContent = still ? 'A little money magic.' : 'It’s raining money!';
   }
   document.querySelector('#spawn').addEventListener('click', rain);
+
+  // Tiny visitors use the empty space BETWEEN entries, never the reading surface.
+  const laneObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) visibleLanes.add(entry.target);
+      else visibleLanes.delete(entry.target);
+    });
+    if (walker && !visibleLanes.has(walker.lane)) {
+      walker.animation.cancel();
+      walker.el.remove();
+      walker = null;
+    }
+    syncWalkers();
+  }, { threshold: .5 });
+  [...document.querySelectorAll('.timeline .job')].slice(0, -1).forEach(job => {
+    const lane = document.createElement('div');
+    lane.className = 'bear-lane';
+    lane.setAttribute('aria-hidden', 'true');
+    job.append(lane);
+    laneObserver.observe(lane);
+  });
+
+  function syncWalkers() {
+    clearTimeout(walkerTimer);
+    walkerTimer = 0;
+    const canWalk = !paused && !document.hidden && visibleLanes.size > 0;
+    if (walker) {
+      walker.el.classList.toggle('walking-visible', canWalk);
+      if (canWalk) walker.animation.play(); else walker.animation.pause();
+    } else if (canWalk) {
+      walkerTimer = setTimeout(spawnWalker, 1600 + Math.random() * 4000);
+    }
+  }
+
+  function spawnWalker() {
+    walkerTimer = 0;
+    if (paused || document.hidden || !visibleLanes.size || walker) return;
+    const lanes = [...visibleLanes];
+    const lane = lanes[Math.floor(Math.random() * lanes.length)];
+    const el = document.createElement('span');
+    el.className = 'tiny-walker walking-visible';
+    const reverse = Math.random() < .5;
+    el.style.setProperty('--direction', reverse ? -1 : 1);
+    const shadow = document.createElement('span');
+    shadow.className = 'walker-shadow';
+    const body = document.createElement('span');
+    body.className = 'walker-body';
+    const img = new Image();
+    img.src = 'assets/bear-walking.webp';
+    img.alt = '';
+    body.append(img);
+    el.append(shadow, body);
+    lane.append(el);
+    const ends = [-45, lane.clientWidth + 45];
+    if (reverse) ends.reverse();
+    const animation = el.animate(ends.map(x => ({ transform: `translateX(${x}px)` })), {
+      duration: 14000 + Math.random() * 7000, easing: 'linear', fill: 'both',
+    });
+    const current = { el, animation, lane };
+    walker = current;
+    const cleanup = () => {
+      el.remove();
+      if (walker === current) { walker = null; syncWalkers(); }
+    };
+    animation.finished.then(cleanup).catch(cleanup);
+    img.addEventListener('error', () => animation.cancel(), { once: true });
+  }
+
+  const chapterLinks = [...document.querySelectorAll('.reading-nav>div a')];
+  const chapterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      chapterLinks.forEach(a => {
+        if (a.hash === `#${entry.target.id}`) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-15% 0px -60% 0px' });
+  ['about', 'experience', 'projects', 'toolkit', 'education', 'contact'].forEach(id => chapterObserver.observe(document.getElementById(id)));
 
   // A missing decorative image must never hide the résumé or block navigation.
   toys.forEach(t => t.el.querySelector('img').addEventListener('error', () => { t.el.hidden = true; }));
