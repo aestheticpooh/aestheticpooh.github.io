@@ -10,13 +10,13 @@
   <link rel="preload" as="image" href="assets/marble-world.webp" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff" href="assets/fonts/dm-sans-latin.woff" crossorigin>
   <link rel="preload" as="font" type="font/woff" href="assets/fonts/caveat-latin.woff" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=a11a3eb2b2f6">
-  <script defer src="js/world.js?v=cd359759cbe8"></script>
+  <link rel="stylesheet" href="css/site.css?v=7e9d1b8ed0cf">
+  <script defer src="js/world.js?v=c2f956626933"></script>
   <script>if(["cassieselement.com","www.cassieselement.com"].includes(location.hostname)){const s=document.createElement("script");s.defer=true;s.src="https://cloud.umami.is/script.js";s.dataset.websiteId="6f609b98-cf0a-4b3d-9c38-bc336a5c1080";document.head.appendChild(s)}</script>
 </head>
 <body>
 <a class="skip-link" href="#about">Skip to résumé</a>
-<header class="hero" id="home" data-world="heavenly-v4">
+<header class="hero" id="home" data-world="heavenly-v5">
   <div class="world" aria-hidden="true">
     <div class="scene-layer scenery" data-depth="0.2"><img src="assets/marble-world.webp" alt="" width="1536" height="1024" fetchpriority="high"></div>
     <div class="scene-layer distant-view" data-depth="0.42"><img src="assets/marble-world.webp" alt="" width="1536" height="1024"></div>
@@ -44,9 +44,9 @@
     <a class="explore" href="#about"><span class="explore-circle" aria-hidden="true"></span><span class="arrow" aria-hidden="true">⟶</span><span>Explore</span></a>
   </div>
   <div class="identity">
-    <svg class="crown" viewBox="0 0 80 80" aria-hidden="true"><path d="M16 66 5 35 26 49 25 9 43 37 65 5 56 58Z"/></svg>
-    <h1><span>Cassie</span> <span>Kwong</span></h1>
-    <svg class="heart" viewBox="0 0 55 60" aria-hidden="true"><path d="M27 52C18 40 0 20 12 13 22 8 26 23 26 25 30 13 46 2 47 18 48 31 33 47 27 52Z"/></svg>
+    <svg class="ink-filter-definitions" width="0" height="0" aria-hidden="true" focusable="false"><defs><filter id="brush-ink" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 .612 0 0 0 0 .376 0 0 0 0 .471 0 -1.818 0 1.691 0"/></filter></defs></svg>
+    <h1 class="sr-only">Cassie Kwong</h1>
+    <img class="brush-name" src="assets/cassie-kwong-brush.webp" alt="" width="1400" height="933" fetchpriority="high" aria-hidden="true">
     <p class="identity-line">Strategy · Creative · Impact</p>
   </div>
   <nav class="chapter-nav" aria-label="Explore the portfolio">
@@ -57,15 +57,16 @@
     <a href="#contact"><span class="chapter-no">05</span><span class="chapter-dash">—</span><span>Contact<small>Say hi</small></span></a>
     <p class="hand-note">same bear,<br>new adventures ♡</p>
   </nav>
-  <div class="toys" role="group" aria-label="Floating plush toys. Click Spawn money, then click or tap a bear to spray it.">
-    <button class="toy toy-pink-peek" data-depth="0.45" data-reaction="wiggle" aria-label="Spray money at the bear in the pink sweater"><span class="toy-motion"><img src="assets/bear-wave-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-white" data-depth="0.65" data-reaction="bounce" aria-label="Spray money at the bear in the white hugs and kisses shirt"><span class="toy-motion"><img src="assets/bear-curious-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-sunglasses" data-depth="0.7" data-reaction="wiggle" aria-label="Spray money at the bear in the lavender hat and sunglasses"><span class="toy-motion"><img src="assets/bear-sunglasses-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-distant" data-depth="0.15" data-reaction="bounce" aria-label="Spray money at the little bear by the water"><span class="toy-motion"><img src="assets/bear-curious-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-pink-right" data-depth="0.35" data-reaction="wiggle" aria-label="Spray money at the little pink sweater bear"><span class="toy-motion"><img src="assets/bear-wave-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-reclining" data-depth="0.8" data-reaction="wiggle" aria-label="Spray money at the lounging bear in sunglasses"><span class="toy-motion"><img src="assets/bear-lounge-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-near-left" data-depth="1.45" data-reaction="bounce" aria-label="Spray money at the little foreground bear"><span class="toy-motion"><img src="assets/bear-sunglasses-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
-    <button class="toy toy-near-right" data-depth="1.25" data-reaction="wiggle" aria-label="Spray money at the foreground bear in the pink sweater"><span class="toy-motion"><img src="assets/bear-wave-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+  <div class="toys" role="group" aria-label="Plush bears resting, peeking, and floating. Click Spawn money, then click or tap a bear to spray it.">
+    <button class="toy toy-pink-peek" data-depth="0.15" data-motion="peek" data-scene-x="550" data-scene-y="340" data-scene-width="168" data-tablet-y="265" data-tablet-width="128" aria-label="Spray money at the pink bear peeking from behind the pillar"><span class="toy-motion"><img src="assets/bear-pillar-peek.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <div class="scene-layer pillar-occluder" data-depth="0.2" aria-hidden="true"><img src="assets/marble-world.webp" alt="" width="1536" height="1024"></div>
+    <button class="toy toy-white" data-depth="0.15" data-motion="seated" data-scene-x="450" data-scene-y="748" data-scene-width="178" aria-label="Spray money at the smiling bear sitting on the marble with its eyes closed"><span class="toy-motion"><img src="assets/bear-seated-smile.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-sunglasses" data-depth="0.7" data-motion="floating" data-scene-x="1164" data-scene-y="355" data-scene-width="142" aria-label="Spray money at the sunglasses bear floating in the sky"><span class="toy-motion"><img src="assets/bear-sunglasses-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-distant" data-depth="0.15" data-motion="seated" data-scene-x="1090" data-scene-y="715" data-scene-width="76" aria-label="Spray money at the tiny open-eyed bear sitting beside the water"><span class="toy-motion"><img src="assets/bear-curious-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-pink-right" data-depth="0.15" data-motion="seated" data-scene-x="1220" data-scene-y="699" data-scene-width="113" aria-label="Spray money at the pink bear sitting on the far marble step"><span class="toy-motion"><img src="assets/bear-wave-reference.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-reclining" data-depth="0.15" data-motion="resting" data-scene-x="1506" data-scene-y="758" data-scene-width="280" data-aspect="1.9" aria-label="Spray money at the sunglasses bear resting its head at the right edge"><span class="toy-motion"><img src="assets/bear-lounge-reference.webp" alt="" width="1800" height="940" draggable="false"></span></button>
+    <button class="toy toy-near-left" data-depth="1.2" data-motion="foreground" aria-label="Spray money at the close-up sunglasses bear peeking from the left edge"><span class="toy-motion"><img src="assets/bear-foreground-shades.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
+    <button class="toy toy-near-right" data-depth="1.35" data-motion="foreground" aria-label="Spray money at the foreground bear looking toward the pool"><span class="toy-motion"><img src="assets/bear-foreground-dreamer.webp" alt="" width="1024" height="1024" draggable="false"></span></button>
   </div>
   <div class="world-caption"><span class="status-dot" aria-hidden="true"></span><span>Based in San Francisco Bay Area</span><span class="caption-line" aria-hidden="true"></span><span>Open to opportunities worldwide</span></div>
 
@@ -80,7 +81,7 @@
 <nav class="reading-nav" aria-label="Résumé chapters"><div><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#toolkit">Toolkit</a><a href="#contact">Contact</a></div><a class="reading-resume" href="assets/cassie-kwong-resume.pdf" download="Cassie-Kwong-Resume.pdf">Résumé ↓</a></nav>
 <section id="about"><div class="section-title"><span>01 · About</span><h2>Growth, with range.</h2></div><p class="about-copy">Growth and marketing leader with 10+ years scaling consumer, marketplace, and SMB businesses. I build 0→1 growth systems, test quickly, and turn data into measurable results.</p>
 <div class="proof-points" aria-label="Selected results"><a href="#work-beaverton"><strong>2,600%</strong><span>increase in web traffic</span><small>Beaverton Cabinet &amp; Stone ↗</small></a><a href="#work-papa"><strong>75–88%</strong><span>reduction in CPA</span><small>Papa Healthcare ↗</small></a><a href="#work-gopuff"><strong>15.1M</strong><span>combined viral video views</span><small>GoPuff ↗</small></a></div>
-<a class="chapter-companion companion-about" href="#projects" aria-label="Follow the little bear to selected projects"><img src="assets/bear-wave-reference.webp" alt="" width="160" height="160" loading="lazy"><span>come see what I’ve made ↗</span></a>
+<a class="chapter-companion companion-about" href="#projects" aria-label="Follow the little bear to selected projects"><img src="assets/bear-wave-worn.webp" alt="" width="160" height="160" loading="lazy"><span>come see what I’ve made ↗</span></a>
 </section>
 <section id="experience">
 <div class="section-title"><span>02 · Experience</span><h2>Where I've built.</h2></div>
@@ -130,7 +131,7 @@
 </section>
 <section id="projects">
 <div class="section-title"><span>03 · Selected projects</span><h2>Things I've grown.</h2><p class="section-note">A few more corners of my world.</p></div>
-<a class="chapter-companion companion-projects" href="#toolkit" aria-label="Follow the lounging bear to the toolkit"><img src="assets/bear-lounge-reference.webp" alt="" width="180" height="95" loading="lazy"><span>the tools behind the ideas ↓</span></a>
+<a class="chapter-companion companion-projects" href="#toolkit" aria-label="Follow the lounging bear to the toolkit"><img src="assets/bear-lounge-worn.webp" alt="" width="180" height="95" loading="lazy"><span>the tools behind the ideas ↓</span></a>
 <div class="projects">
 <div class="card"><div class="tag">Founder · Consumer</div><h3>Mighty Buns Athletics</h3><p>Built a consumer fitness brand from concept to market across product, supply chain, Shopify, Amazon, acquisition, and influencers; ranked top 5% of Shopify businesses launched that July.</p></div>
 <div class="card"><div class="tag">Consulting · Staffing</div><h3>Goodwrx</h3><div class="project-role">Senior Marketing Consultant (Part-Time / Side Consulting)</div><p>100% hit rate on event staffing acquisition targets from paid social, search, and job posting platforms; managed ad budgets dynamically; overhauled Goodwrx’s underperforming landing page into an active lead generation asset.</p></div>
@@ -164,7 +165,7 @@
 </section>
 <section id="contact" class="contact"><div class="contact-pool" aria-hidden="true"></div><div class="section-title"><span>05 · Contact</span></div><h2>Let's make something grow.</h2><p class="contact-name">Cassie J Kwong</p>
 <div class="contact-links"><a href="mailto:cassie.kwong@gmail.com">cassie.kwong@gmail.com</a><a href="tel:+14084206980">(408) 420-6980</a><a href="https://www.linkedin.com/in/cassiejkwong">LinkedIn</a></div>
-<a class="resume-download" href="assets/cassie-kwong-resume.pdf" download="Cassie-Kwong-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a><a class="chapter-companion companion-contact" href="#home" aria-label="Follow the curious bear back to the top"><img src="assets/bear-curious-reference.webp" alt="" width="120" height="120" loading="lazy"><span>back to daydreaming ↑</span></a></section></main><footer>Cassie Kwong © 2026 · built with curiosity, data & a little Pooh ♡</footer>
+<a class="resume-download" href="assets/cassie-kwong-resume.pdf" download="Cassie-Kwong-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a><a class="chapter-companion companion-contact" href="#home" aria-label="Follow the curious bear back to the top"><img src="assets/bear-curious-worn.webp" alt="" width="120" height="120" loading="lazy"><span>back to daydreaming ↑</span></a></section></main><footer>Cassie Kwong © 2026 · built with curiosity, data & a little Pooh ♡</footer>
 
 </body>
 </html>

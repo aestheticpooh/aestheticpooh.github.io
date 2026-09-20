@@ -13,10 +13,12 @@
   const clouds = document.querySelector('.clouds-moving');
   const reflection = document.querySelector('.water-reflection');
   const ripples = document.querySelector('.water-ripples');
+  const pillar = document.querySelector('.pillar-occluder');
   const billSources = ['assets/dollar-bill.webp'];
   const toys = [...document.querySelectorAll('.toy')].map((el, i) => ({
     el, inner: el.querySelector('.toy-motion'), phase: i * 1.77,
     depth: Number(el.dataset.depth), x: 0, y: 0, vx: 0, vy: 0,
+    motion: el.dataset.motion || 'floating',
     angle: 0, angularVelocity: 0, cx: 0, cy: 0, size: 0,
   }));
   let paused = reduced.matches;
@@ -36,7 +38,36 @@
   let walkerTimer = 0;
   function measure() {
     rect = hero.getBoundingClientRect();
+    // Project the marble image's coordinates into the same cover crop as the
+    // scenery. Seated bears stay on their steps as the viewport changes.
+    const desktop = rect.width > 760;
+    const layerWidth = rect.width * 1.03;
+    const layerHeight = rect.height * 1.03;
+    const scale = Math.max(layerWidth / 1536, layerHeight / 1024);
+    const imageX = (layerWidth - 1536 * scale) / 2;
+    const imageY = (layerHeight - 1024 * scale) / 2;
+    const originX = imageX - rect.width * .015;
+    const originY = imageY - rect.height * .015;
+    if (pillar && desktop) {
+      const edge = imageX + 548 * scale;
+      const top = imageY + 112 * scale;
+      const bottom = imageY + 395 * scale;
+      pillar.style.clipPath = `polygon(0 ${top}px,${edge}px ${top}px,${edge}px ${bottom}px,0 ${bottom}px)`;
+    }
     toys.forEach(t => {
+      if (t.el.dataset.sceneX) {
+        if (desktop) {
+          const tablet = rect.width <= 1150;
+          const width = Number(tablet && t.el.dataset.tabletWidth || t.el.dataset.sceneWidth) * scale;
+          const baseline = Number(tablet && t.el.dataset.tabletY || t.el.dataset.sceneY);
+          const height = width / Number(t.el.dataset.aspect || 1);
+          t.el.style.width = `${width}px`;
+          t.el.style.left = `${originX + Number(t.el.dataset.sceneX) * scale - width / 2}px`;
+          t.el.style.top = `${originY + baseline * scale - height}px`;
+        } else {
+          ['width', 'left', 'top'].forEach(p => t.el.style.removeProperty(p));
+        }
+      }
       const r = t.el.getBoundingClientRect();
       t.cx = r.left - rect.left + r.width / 2;
       t.cy = r.top - rect.top + r.height / 2;
@@ -93,9 +124,12 @@
       t.y += t.vy * dt;
       t.angularVelocity = (t.angularVelocity - t.angle * .046 * dt) * Math.pow(.86, dt);
       t.angle += t.angularVelocity * dt;
-      const bob = Math.sin(clock * .95 + t.phase) * (2.2 + t.depth * 2.3);
-      const sway = Math.sin(clock * .55 + t.phase) * 1.2;
-      const x = t.x - sceneX * 16 * t.depth;
+      const resting = t.motion === 'seated' || t.motion === 'resting';
+      const amplitude = resting ? .3 : t.motion === 'peek' ? 1.2 : t.motion === 'foreground' ? 1.7 : 6;
+      const bob = Math.sin(clock * .95 + t.phase) * amplitude;
+      const sway = Math.sin(clock * .55 + t.phase) * (resting ? .16 : t.motion === 'foreground' ? .45 : 1.2);
+      const peek = t.motion === 'peek' ? Math.sin(clock * .32 + t.phase) * 7 : 0;
+      const x = t.x + peek - sceneX * 16 * t.depth;
       const y = t.y + bob - sceneY * 11 * t.depth;
       t.inner.style.transform = `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) rotate(calc(var(--rotation) + ${(t.angle + sway).toFixed(2)}deg))`;
       t.el.style.setProperty('--shadow-x', `${(x * .35).toFixed(1)}px`);
@@ -119,7 +153,7 @@
     document.getAnimations().forEach(animation => {
       if (!(animation instanceof CSSAnimation)) return;
       const target = animation.effect?.target;
-      if (!target?.closest('.world,.page-atmosphere,.contact-pool,.tiny-walker')) return;
+      if (!target?.closest('.world,.toys,.page-atmosphere,.contact-pool,.tiny-walker')) return;
       const shouldPause = paused || document.hidden || (!!target.closest('.hero') && !visible);
       if (shouldPause) animation.pause();
       else if (animation.playState === 'paused') animation.play();
