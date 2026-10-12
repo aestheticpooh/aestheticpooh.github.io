@@ -446,3 +446,29 @@
   measure();
   applyMotion();
 })();
+
+
+/* Recruiter-first / playful easter egg switch. Every page load starts professional. */
+(() => {
+  const button = document.querySelector('#mode-egg');
+  if (!button) return;
+  const body = document.body;
+  const hero = document.querySelector('.hero');
+  function setMode(play) {
+    body.classList.toggle('play-mode', play);
+    button.setAttribute('aria-pressed', String(play));
+    button.setAttribute('aria-label', play ? 'Return to professional portfolio' : 'Open alternate interactive portfolio');
+    if (play) {
+      requestAnimationFrame(() => {
+        hero?.getBoundingClientRect();
+        window.dispatchEvent(new Event('resize'));
+      });
+    }
+  }
+  setMode(false);
+  button.addEventListener('click', () => {
+    const play = !body.classList.contains('play-mode');
+    setMode(play);
+    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+})();
