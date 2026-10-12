@@ -184,16 +184,25 @@ body:not(.play-mode) footer{background:#fbfaf8;color:#706963}
 .play-mode .footer-play{display:inline}
 .pole-entry{position:absolute;left:73.5%;top:0;width:170px;height:67%;z-index:9;pointer-events:none;opacity:0}
 .pole-line{position:absolute;left:50%;top:-5%;bottom:0;width:3px;background:linear-gradient(90deg,#d7d1cb,#8f8780 48%,#f1ece8);box-shadow:1px 0 4px #0002}
-.pole-bear{position:absolute;width:120px;height:120px;object-fit:contain;left:50%;top:-130px;transform:translateX(-48%) rotate(7deg);filter:drop-shadow(0 12px 12px #3e2c2433)}
+.pole-bear{position:absolute;width:120px;height:120px;object-fit:contain;left:50%;top:-145px;transform-origin:48% 48%;transform:translateX(-50%) rotate(8deg);filter:drop-shadow(0 12px 12px #3e2c2433);will-change:top,transform}
 .play-mode .pole-entry{opacity:1}
-.play-mode .pole-bear{animation:pole-slide 2.25s cubic-bezier(.2,.65,.25,1) .15s both}
-@keyframes pole-slide{
-  0%{top:-145px;transform:translateX(-48%) rotate(10deg)}
-  18%{transform:translateX(-43%) rotate(-7deg)}
-  38%{transform:translateX(-51%) rotate(8deg)}
-  60%{transform:translateX(-46%) rotate(-5deg)}
-  82%{top:56%;transform:translateX(-50%) rotate(4deg)}
-  100%{top:63%;transform:translateX(-48%) rotate(0deg)}
+.play-mode .pole-bear{animation:pole-dancer 3.15s cubic-bezier(.18,.72,.24,1) .18s both,pole-finish 1.25s ease-in-out 3.45s infinite alternate}
+@keyframes pole-dancer{
+  0%{top:-145px;transform:translateX(-50%) translateY(0) rotate(12deg) scaleX(1)}
+  10%{top:2%;transform:translateX(-72%) translateY(0) rotate(-24deg) scaleX(1)}
+  22%{top:11%;transform:translateX(-18%) translateY(-7px) rotate(54deg) scaleX(.82)}
+  34%{top:20%;transform:translateX(-74%) translateY(5px) rotate(142deg) scaleX(-.72)}
+  46%{top:31%;transform:translateX(-20%) translateY(-8px) rotate(226deg) scaleX(-.9)}
+  58%{top:40%;transform:translateX(-70%) translateY(4px) rotate(316deg) scaleX(.78)}
+  69%{top:49%;transform:translateX(-25%) translateY(-6px) rotate(398deg) scaleX(1)}
+  78%{top:55%;transform:translateX(-59%) translateY(2px) rotate(452deg) scaleX(.92)}
+  86%{top:58%;transform:translateX(-37%) translateY(-8px) rotate(424deg) scaleX(1)}
+  93%{top:61%;transform:translateX(-52%) translateY(4px) rotate(388deg) scaleX(1.03)}
+  100%{top:63%;transform:translateX(-48%) translateY(0) rotate(360deg) scaleX(1)}
+}
+@keyframes pole-finish{
+  from{transform:translateX(-48%) translateY(0) rotate(360deg)}
+  to{transform:translateX(-42%) translateY(-5px) rotate(369deg)}
 }
 .play-mode .toy{cursor:pointer}
 @media(max-width:760px){
