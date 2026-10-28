@@ -82,7 +82,7 @@ body:not(.play-mode) .pro-capability-lines span,
 body:not(.play-mode) .pro-education-row h2,
 body:not(.play-mode) .pro-contact h2,
 body:not(.play-mode) .pro-contact h2 em{
-  font-family:'DM Serif Display',Georgia,serif !important;
+  font-family:'Libre Baskerville',Georgia,serif !important;
   font-weight:400 !important;
 }
 
@@ -593,7 +593,7 @@ body:not(.play-mode) .pro-name em{
 body:not(.play-mode) .pro-name span{
   display:inline !important;
   color:#111915 !important;
-  font-family:'DM Serif Display',Georgia,serif !important;
+  font-family:'Libre Baskerville',Georgia,serif !important;
   font-weight:400 !important;
   font-style:normal !important;
   letter-spacing:.035em !important;
@@ -827,7 +827,7 @@ body:not(.play-mode) .pro-capability-lines span,
 body:not(.play-mode) .pro-education-row h2,
 body:not(.play-mode) .pro-contact h2,
 body:not(.play-mode) .pro-contact h2 em{
-  font-family:'DM Serif Display',Georgia,serif!important;
+  font-family:'Libre Baskerville',Georgia,serif!important;
   font-weight:400!important;
 }
 body:not(.play-mode) .pro-mark{
@@ -855,3 +855,67 @@ body:not(.play-mode) .pro-hero-copy{
   max-width:1060px!important;
 }
 body:not(.play-mode) .pro-portrait{display:none!important}
+
+
+/* Saffron Avenue-inspired classic pairing:
+   Libre Baskerville for editorial serif; Garet Book for quiet sans hierarchy. */
+body:not(.play-mode){
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+}
+body:not(.play-mode) .pro-name,
+body:not(.play-mode) .pro-name em,
+body:not(.play-mode) .pro-name span,
+body:not(.play-mode) .pro-summary,
+body:not(.play-mode) .pro-section h2,
+body:not(.play-mode) .pro-section h2 em,
+body:not(.play-mode) .pro-upfront-copy>p,
+body:not(.play-mode) .pro-principles strong,
+body:not(.play-mode) .pro-impact-row strong,
+body:not(.play-mode) .pro-exp-list h3,
+body:not(.play-mode) .pro-exp-points,
+body:not(.play-mode) .pro-work-list h3,
+body:not(.play-mode) .pro-work-list p,
+body:not(.play-mode) .pro-capability-lines p,
+body:not(.play-mode) .pro-education-row h2,
+body:not(.play-mode) .pro-education-row p,
+body:not(.play-mode) .pro-contact h2,
+body:not(.play-mode) .pro-contact h2 em,
+body:not(.play-mode) .pro-contact-links a{
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+}
+body:not(.play-mode) .pro-mark,
+body:not(.play-mode) .pro-nav a,
+body:not(.play-mode) .pro-kicker,
+body:not(.play-mode) .pro-section-kicker,
+body:not(.play-mode) .pro-actions a,
+body:not(.play-mode) .pro-text-link,
+body:not(.play-mode) .pro-principles span,
+body:not(.play-mode) .pro-exp-title>p,
+body:not(.play-mode) .pro-exp-list time,
+body:not(.play-mode) .pro-work-list article>span,
+body:not(.play-mode) .pro-capability-lines span,
+body:not(.play-mode) .pro-companies>p,
+body:not(.play-mode) .logo-track span,
+body:not(.play-mode) footer{
+  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif!important;
+  font-weight:300!important;
+}
+body:not(.play-mode) .pro-name{
+  letter-spacing:-.025em!important;
+  line-height:.96!important;
+}
+body:not(.play-mode) .pro-name span{
+  letter-spacing:.015em!important;
+}
+body:not(.play-mode) .pro-name em,
+body:not(.play-mode) .pro-section h2 em,
+body:not(.play-mode) .pro-contact h2 em{
+  font-style:italic!important;
+}
+body:not(.play-mode) .pro-exp-list h3,
+body:not(.play-mode) .pro-work-list h3,
+body:not(.play-mode) .pro-principles strong{
+  font-weight:400!important;
+}
