@@ -123,7 +123,7 @@ body:not(.play-mode) .pro-nav a{
   text-decoration:none !important;
   text-transform:uppercase !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:9px !important;
+  font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
   letter-spacing:.18em !important;
@@ -143,7 +143,7 @@ body:not(.play-mode) .pro-companies>p{
   color:#7d9189 !important;
   text-transform:uppercase !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:9px !important;
+  font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
   letter-spacing:.2em !important;
@@ -191,7 +191,7 @@ body:not(.play-mode) .pro-text-link{
   border-bottom:1px solid #8ba59b !important;
   padding:8px 0 7px !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:9px !important;
+  font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
   letter-spacing:.12em !important;
@@ -259,7 +259,7 @@ body:not(.play-mode) .pro-principles p{
   color:#697d75 !important;
   border-bottom:1px solid var(--pro-line) !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:13px !important;
+  font-size:14px !important;
   font-weight:400 !important;
   line-height:1.72 !important;
 }
@@ -300,7 +300,7 @@ body:not(.play-mode) .pro-impact-row span{
   color:#73877e !important;
   text-transform:uppercase !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:8px !important;
+  font-size:14px !important;
   line-height:1.4 !important;
   letter-spacing:.15em !important;
 }
@@ -333,14 +333,14 @@ body:not(.play-mode) .pro-exp-list article>div>p{
   margin:0 !important;
   color:#72867d !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:10px !important;
+  font-size:14px !important;
   line-height:1.5 !important;
   letter-spacing:.05em !important;
 }
 body:not(.play-mode) .pro-exp-list time{
   color:#899b94 !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:9px !important;
+  font-size:14px !important;
   line-height:1.6 !important;
   letter-spacing:.07em !important;
 }
@@ -348,7 +348,7 @@ body:not(.play-mode) .pro-exp-desc{
   margin:0 !important;
   color:#5e746b !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:13px !important;
+  font-size:14px !important;
   line-height:1.78 !important;
 }
 body:not(.play-mode) .pro-text-link{display:inline-block !important;margin-top:36px !important}
@@ -368,7 +368,7 @@ body:not(.play-mode) .pro-work-list article>span{
   color:#889b93 !important;
   text-transform:uppercase !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:8px !important;
+  font-size:14px !important;
   line-height:1.2 !important;
   letter-spacing:.16em !important;
 }
@@ -383,7 +383,7 @@ body:not(.play-mode) .pro-work-list p{
   margin:0 !important;
   color:#647970 !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:13px !important;
+  font-size:14px !important;
   line-height:1.75 !important;
 }
 
@@ -401,7 +401,7 @@ body:not(.play-mode) .pro-capability-lines p{
   color:#64786f !important;
   border-bottom:1px solid var(--pro-line) !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:13px !important;
+  font-size:14px !important;
   line-height:1.75 !important;
 }
 body:not(.play-mode) .pro-capability-lines span{
@@ -427,7 +427,7 @@ body:not(.play-mode) .pro-education-row p{
   margin:3px 0 0 !important;
   color:#667a71 !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:12px !important;
+  font-size:14px !important;
   line-height:1.72 !important;
 }
 
@@ -453,7 +453,7 @@ body:not(.play-mode) .pro-contact-links a{
   border-bottom:1px solid #8eaa9f !important;
   padding:7px 0 !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:10px !important;
+  font-size:14px !important;
   line-height:1.2 !important;
 }
 
@@ -515,7 +515,7 @@ body:not(.play-mode) .logo-track img{
 body:not(.play-mode) .logo-track span{
   color:#788a82 !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:8px !important;
+  font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
   letter-spacing:.11em !important;
@@ -529,7 +529,7 @@ body:not(.play-mode) footer{
   border-top:1px solid var(--pro-line) !important;
   padding:30px !important;
   font-family:'Times New Roman',Times,serif !important;
-  font-size:9px !important;
+  font-size:14px !important;
   line-height:1.4 !important;
 }
 
@@ -546,7 +546,7 @@ body:not(.play-mode) footer{
   body:not(.play-mode) .pro-topbar{align-items:flex-start !important}
   body:not(.play-mode) .pro-mark{font-size:38px !important}
   body:not(.play-mode) .pro-nav{max-width:58% !important;padding-right:20px !important;gap:10px 16px !important}
-  body:not(.play-mode) .pro-nav a{font-size:7px !important}
+  body:not(.play-mode) .pro-nav a{font-size:14px !important}
   body:not(.play-mode) .pro-hero-copy{padding:98px 0 74px !important}
   body:not(.play-mode) .pro-name{font-size:58px !important;line-height:.98 !important}
   body:not(.play-mode) .pro-summary{font-size:20px !important;max-width:31ch !important}
@@ -625,13 +625,13 @@ body:not(.play-mode) .pro-education-row p{
 body:not(.play-mode) .pro-kicker,
 body:not(.play-mode) .pro-section-kicker,
 body:not(.play-mode) .pro-companies>p{
-  font-size:10px !important;
+  font-size:14px !important;
   letter-spacing:.18em !important;
 }
 body:not(.play-mode) .pro-nav a,
 body:not(.play-mode) .pro-actions a,
 body:not(.play-mode) .pro-text-link{
-  font-size:10px !important;
+  font-size:14px !important;
 }
 @media(max-width:760px){
   body:not(.play-mode) .pro-name{font-size:56px !important}
