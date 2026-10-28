@@ -842,3 +842,16 @@ body:not(.play-mode) .pro-education-row p{
   font-size:17px!important;
   line-height:1.72!important;
 }
+
+
+/* Hero after portrait removal */
+body:not(.play-mode) .pro-hero-stage{
+  display:block!important;
+  width:100%!important;
+  margin:auto 0!important;
+  padding:clamp(100px,13vh,160px) 0 clamp(90px,11vh,126px)!important;
+}
+body:not(.play-mode) .pro-hero-copy{
+  max-width:1060px!important;
+}
+body:not(.play-mode) .pro-portrait{display:none!important}
