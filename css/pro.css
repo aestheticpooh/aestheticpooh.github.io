@@ -999,3 +999,15 @@ body:not(.play-mode) .pro-name{
 body:not(.play-mode) .pro-name span{
   letter-spacing:.035em!important;
 }
+
+
+/* Restrained editorial emphasis: only two section phrases use true italics. */
+body:not(.play-mode) .pro-section h2 em,
+body:not(.play-mode) .pro-contact h2 em{
+  font-style:normal!important;
+}
+body:not(.play-mode) .pro-section h2 em.pro-emphasis{
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-style:italic!important;
+  font-weight:400!important;
+}
