@@ -12,7 +12,7 @@ body:not(.play-mode){
   margin:0;
   background:#fff !important;
   color:var(--pro-ink) !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
 }
 
 /* Hard isolation: none of the playful world exists visually in recruiter mode. */
@@ -122,7 +122,7 @@ body:not(.play-mode) .pro-nav a{
   color:#627a70 !important;
   text-decoration:none !important;
   text-transform:uppercase !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:9px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -142,7 +142,7 @@ body:not(.play-mode) .pro-companies>p{
   margin:0 0 30px !important;
   color:#7d9189 !important;
   text-transform:uppercase !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:9px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -190,7 +190,7 @@ body:not(.play-mode) .pro-text-link{
   border:0 !important;
   border-bottom:1px solid #8ba59b !important;
   padding:8px 0 7px !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:9px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -258,7 +258,7 @@ body:not(.play-mode) .pro-principles p{
   padding:25px 0 !important;
   color:#697d75 !important;
   border-bottom:1px solid var(--pro-line) !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:13px !important;
   font-weight:400 !important;
   line-height:1.72 !important;
@@ -299,7 +299,7 @@ body:not(.play-mode) .pro-impact-row span{
   margin-top:11px !important;
   color:#73877e !important;
   text-transform:uppercase !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:8px !important;
   line-height:1.4 !important;
   letter-spacing:.15em !important;
@@ -332,14 +332,14 @@ body:not(.play-mode) .pro-exp-list h3{
 body:not(.play-mode) .pro-exp-list article>div>p{
   margin:0 !important;
   color:#72867d !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:10px !important;
   line-height:1.5 !important;
   letter-spacing:.05em !important;
 }
 body:not(.play-mode) .pro-exp-list time{
   color:#899b94 !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:9px !important;
   line-height:1.6 !important;
   letter-spacing:.07em !important;
@@ -347,7 +347,7 @@ body:not(.play-mode) .pro-exp-list time{
 body:not(.play-mode) .pro-exp-desc{
   margin:0 !important;
   color:#5e746b !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:13px !important;
   line-height:1.78 !important;
 }
@@ -367,7 +367,7 @@ body:not(.play-mode) .pro-work-list article{
 body:not(.play-mode) .pro-work-list article>span{
   color:#889b93 !important;
   text-transform:uppercase !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:8px !important;
   line-height:1.2 !important;
   letter-spacing:.16em !important;
@@ -382,7 +382,7 @@ body:not(.play-mode) .pro-work-list p{
   max-width:48ch !important;
   margin:0 !important;
   color:#647970 !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:13px !important;
   line-height:1.75 !important;
 }
@@ -400,7 +400,7 @@ body:not(.play-mode) .pro-capability-lines p{
   padding:28px 0 !important;
   color:#64786f !important;
   border-bottom:1px solid var(--pro-line) !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:13px !important;
   line-height:1.75 !important;
 }
@@ -426,7 +426,7 @@ body:not(.play-mode) .pro-education-row h2{
 body:not(.play-mode) .pro-education-row p{
   margin:3px 0 0 !important;
   color:#667a71 !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:12px !important;
   line-height:1.72 !important;
 }
@@ -452,7 +452,7 @@ body:not(.play-mode) .pro-contact-links a{
   text-decoration:none !important;
   border-bottom:1px solid #8eaa9f !important;
   padding:7px 0 !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:10px !important;
   line-height:1.2 !important;
 }
@@ -514,7 +514,7 @@ body:not(.play-mode) .logo-track img{
 }
 body:not(.play-mode) .logo-track span{
   color:#788a82 !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:8px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -528,7 +528,7 @@ body:not(.play-mode) footer{
   color:#7b8d85 !important;
   border-top:1px solid var(--pro-line) !important;
   padding:30px !important;
-  font-family:'DM Sans',Arial,sans-serif !important;
+  font-family:'Times New Roman',Times,serif !important;
   font-size:9px !important;
   line-height:1.4 !important;
 }
@@ -562,4 +562,78 @@ body:not(.play-mode) footer{
   body:not(.play-mode) .pro-capability-lines p{grid-template-columns:1fr !important;gap:8px !important}
   body:not(.play-mode) .pro-contact{padding:94px 22px !important}
   body:not(.play-mode) .logo-track>a{flex-basis:70vw !important}
+}
+
+
+/* Cartier-inspired display hierarchy */
+body:not(.play-mode) .pro-name{
+  font-size:clamp(70px,8.4vw,136px) !important;
+  line-height:.92 !important;
+  letter-spacing:-.035em !important;
+}
+body:not(.play-mode) .pro-name em{
+  display:inline-block !important;
+  margin:0 .14em 0 0 !important;
+  color:#284d40 !important;
+  font-size:.54em !important;
+  line-height:1 !important;
+  letter-spacing:-.025em !important;
+  vertical-align:.12em !important;
+  font-style:italic !important;
+  text-transform:none !important;
+}
+body:not(.play-mode) .pro-name span{
+  display:inline !important;
+  color:#111915 !important;
+  font-family:'Bodoni Moda',Georgia,serif !important;
+  font-weight:400 !important;
+  font-style:normal !important;
+  letter-spacing:.035em !important;
+}
+body:not(.play-mode) .pro-summary{
+  font-family:'Times New Roman',Times,serif !important;
+  font-size:clamp(20px,1.55vw,24px) !important;
+  line-height:1.62 !important;
+}
+body:not(.play-mode) .pro-nav a,
+body:not(.play-mode) .pro-kicker,
+body:not(.play-mode) .pro-section-kicker,
+body:not(.play-mode) .pro-companies>p,
+body:not(.play-mode) .pro-actions a,
+body:not(.play-mode) .pro-text-link,
+body:not(.play-mode) .pro-principles p,
+body:not(.play-mode) .pro-impact-row span,
+body:not(.play-mode) .pro-exp-list article>div>p,
+body:not(.play-mode) .pro-exp-list time,
+body:not(.play-mode) .pro-exp-desc,
+body:not(.play-mode) .pro-work-list article>span,
+body:not(.play-mode) .pro-work-list p,
+body:not(.play-mode) .pro-capability-lines p,
+body:not(.play-mode) .pro-education-row p,
+body:not(.play-mode) .pro-contact-links a,
+body:not(.play-mode) .logo-track span,
+body:not(.play-mode) footer{
+  font-family:'Times New Roman',Times,serif !important;
+}
+body:not(.play-mode) .pro-exp-desc,
+body:not(.play-mode) .pro-work-list p,
+body:not(.play-mode) .pro-capability-lines p,
+body:not(.play-mode) .pro-education-row p{
+  font-size:15px !important;
+  line-height:1.68 !important;
+}
+body:not(.play-mode) .pro-kicker,
+body:not(.play-mode) .pro-section-kicker,
+body:not(.play-mode) .pro-companies>p{
+  font-size:10px !important;
+  letter-spacing:.18em !important;
+}
+body:not(.play-mode) .pro-nav a,
+body:not(.play-mode) .pro-actions a,
+body:not(.play-mode) .pro-text-link{
+  font-size:10px !important;
+}
+@media(max-width:760px){
+  body:not(.play-mode) .pro-name{font-size:56px !important}
+  body:not(.play-mode) .pro-name em{font-size:.55em !important;margin-right:.10em !important}
 }
