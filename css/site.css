@@ -932,7 +932,6 @@ body:not(.play-mode) .pro-impact-row strong{
 body:not(.play-mode) .pro-impact-row span{
   display:block;
   margin-top:10px;
-  color:#9caf a6;
   color:#9cafa6;
   text-transform:uppercase;
   font:400 8px/1.4 'DM Sans',sans-serif;
