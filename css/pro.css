@@ -772,3 +772,63 @@ body:not(.play-mode) .logo-track span{
     font-size:17px !important;
   }
 }
+
+
+/* Professional portrait hero */
+body:not(.play-mode) .pro-hero-stage{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.55fr) !important;
+  gap:clamp(56px,8vw,120px) !important;
+  align-items:center !important;
+  width:100% !important;
+  margin:auto 0 !important;
+  padding:clamp(92px,12vh,150px) 0 clamp(82px,10vh,120px) !important;
+}
+body:not(.play-mode) .pro-hero-copy{
+  width:auto !important;
+  max-width:980px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+body:not(.play-mode) .pro-portrait{
+  margin:0 !important;
+  justify-self:end !important;
+  width:min(100%,420px) !important;
+}
+body:not(.play-mode) .pro-portrait img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:1/1 !important;
+  object-fit:cover !important;
+  object-position:center 38% !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+body:not(.play-mode) .pro-portrait figcaption{
+  margin-top:13px !important;
+  color:#70847b !important;
+  font-family:'Times New Roman',Times,serif !important;
+  font-size:14px !important;
+  line-height:1.4 !important;
+  text-align:left !important;
+}
+@media(max-width:960px){
+  body:not(.play-mode) .pro-hero-stage{
+    grid-template-columns:1fr !important;
+    gap:54px !important;
+  }
+  body:not(.play-mode) .pro-portrait{
+    justify-self:start !important;
+    width:min(72vw,380px) !important;
+  }
+}
+@media(max-width:760px){
+  body:not(.play-mode) .pro-hero-stage{
+    padding:82px 0 60px !important;
+    gap:44px !important;
+  }
+  body:not(.play-mode) .pro-portrait{
+    width:min(82vw,340px) !important;
+  }
+}
