@@ -472,3 +472,68 @@
     window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
 })();
+
+
+/* Professional company marquee: slow auto-scroll, hover/focus pause, manual drag. */
+(() => {
+  const scroller = document.querySelector('#logo-marquee');
+  if (!scroller) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reduced.matches;
+  let dragging = false;
+  let startX = 0;
+  let startScroll = 0;
+  let raf = 0;
+  let last = 0;
+  const speed = 18; // pixels per second
+
+  function halfWidth() {
+    const track = scroller.querySelector('.logo-track');
+    return track ? track.scrollWidth / 2 : 0;
+  }
+  function tick(now) {
+    raf = requestAnimationFrame(tick);
+    if (paused || dragging || document.hidden || document.body.classList.contains('play-mode')) {
+      last = now;
+      return;
+    }
+    const dt = Math.min((now - (last || now)) / 1000, .05);
+    last = now;
+    scroller.scrollLeft += speed * dt;
+    const half = halfWidth();
+    if (half && scroller.scrollLeft >= half) scroller.scrollLeft -= half;
+  }
+  scroller.addEventListener('mouseenter', () => { paused = true; });
+  scroller.addEventListener('mouseleave', () => { paused = reduced.matches; });
+  scroller.addEventListener('focusin', () => { paused = true; });
+  scroller.addEventListener('focusout', e => {
+    if (!scroller.contains(e.relatedTarget)) paused = reduced.matches;
+  });
+  scroller.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return;
+    dragging = true;
+    paused = true;
+    startX = e.clientX;
+    startScroll = scroller.scrollLeft;
+    scroller.setPointerCapture?.(e.pointerId);
+  });
+  scroller.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    scroller.scrollLeft = startScroll - (e.clientX - startX);
+  });
+  const endDrag = e => {
+    if (!dragging) return;
+    dragging = false;
+    scroller.releasePointerCapture?.(e.pointerId);
+    paused = reduced.matches;
+  };
+  scroller.addEventListener('pointerup', endDrag);
+  scroller.addEventListener('pointercancel', endDrag);
+  scroller.addEventListener('wheel', () => {
+    paused = true;
+    clearTimeout(scroller._resumeTimer);
+    scroller._resumeTimer = setTimeout(() => { paused = reduced.matches; }, 1800);
+  }, { passive: true });
+  reduced.addEventListener('change', e => { paused = e.matches; });
+  raf = requestAnimationFrame(tick);
+})();
