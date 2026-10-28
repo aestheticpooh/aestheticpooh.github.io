@@ -637,3 +637,138 @@ body:not(.play-mode) .pro-text-link{
   body:not(.play-mode) .pro-name{font-size:56px !important}
   body:not(.play-mode) .pro-name em{font-size:.55em !important;margin-right:.10em !important}
 }
+
+
+/* Readability pass — professional mode has no text below 14px */
+body:not(.play-mode) .pro-nav a,
+body:not(.play-mode) .pro-kicker,
+body:not(.play-mode) .pro-section-kicker,
+body:not(.play-mode) .pro-companies>p,
+body:not(.play-mode) .pro-actions a,
+body:not(.play-mode) .pro-text-link,
+body:not(.play-mode) .pro-principles span,
+body:not(.play-mode) .pro-impact-row span,
+body:not(.play-mode) .pro-exp-list article>div>p,
+body:not(.play-mode) .pro-exp-list time,
+body:not(.play-mode) .pro-work-list article>span,
+body:not(.play-mode) .logo-track span,
+body:not(.play-mode) footer{
+  font-size:14px !important;
+  line-height:1.45 !important;
+}
+
+body:not(.play-mode) .pro-summary{
+  font-size:clamp(22px,1.65vw,26px) !important;
+  line-height:1.62 !important;
+}
+
+body:not(.play-mode) .pro-upfront-copy>p{
+  font-size:clamp(23px,2vw,30px) !important;
+  line-height:1.58 !important;
+}
+
+body:not(.play-mode) .pro-principles p{
+  font-size:16px !important;
+  line-height:1.7 !important;
+}
+
+body:not(.play-mode) .pro-principles strong{
+  font-size:24px !important;
+}
+
+body:not(.play-mode) .pro-exp-list article{
+  grid-template-columns:minmax(270px,.82fr) 150px minmax(430px,1.18fr) !important;
+  gap:48px !important;
+  padding:42px 0 46px !important;
+}
+
+body:not(.play-mode) .pro-exp-list h3{
+  font-size:30px !important;
+  line-height:1.18 !important;
+}
+
+body:not(.play-mode) .pro-exp-title>p{
+  margin-top:7px !important;
+  font-size:15px !important;
+}
+
+body:not(.play-mode) .pro-exp-list time{
+  padding-top:4px !important;
+  color:#70857b !important;
+}
+
+body:not(.play-mode) .pro-exp-points{
+  margin:0 !important;
+  padding:0 0 0 1.15em !important;
+  color:#4f675e !important;
+  font-family:'Times New Roman',Times,serif !important;
+  font-size:17px !important;
+  line-height:1.72 !important;
+}
+
+body:not(.play-mode) .pro-exp-points li{
+  padding-left:.25em !important;
+}
+
+body:not(.play-mode) .pro-exp-points li+li{
+  margin-top:13px !important;
+}
+
+body:not(.play-mode) .pro-work-list p,
+body:not(.play-mode) .pro-capability-lines p{
+  font-size:17px !important;
+  line-height:1.72 !important;
+}
+
+body:not(.play-mode) .pro-education-row p{
+  font-size:16px !important;
+  line-height:1.72 !important;
+}
+
+body:not(.play-mode) .pro-contact-links a{
+  font-size:16px !important;
+  line-height:1.4 !important;
+}
+
+body:not(.play-mode) .logo-track span{
+  margin-top:3px !important;
+  letter-spacing:.04em !important;
+  text-transform:none !important;
+}
+
+@media(max-width:1000px){
+  body:not(.play-mode) .pro-exp-list article{
+    grid-template-columns:1fr 150px !important;
+    gap:16px 30px !important;
+  }
+  body:not(.play-mode) .pro-exp-points{
+    grid-column:1/-1 !important;
+    max-width:840px !important;
+  }
+}
+
+@media(max-width:760px){
+  body:not(.play-mode) .pro-nav a,
+  body:not(.play-mode) .pro-kicker,
+  body:not(.play-mode) .pro-section-kicker,
+  body:not(.play-mode) .pro-companies>p,
+  body:not(.play-mode) .pro-actions a,
+  body:not(.play-mode) .pro-text-link,
+  body:not(.play-mode) .pro-principles span,
+  body:not(.play-mode) .pro-impact-row span,
+  body:not(.play-mode) .pro-exp-list article>div>p,
+  body:not(.play-mode) .pro-exp-list time,
+  body:not(.play-mode) .pro-work-list article>span,
+  body:not(.play-mode) .logo-track span,
+  body:not(.play-mode) footer{
+    font-size:14px !important;
+  }
+  body:not(.play-mode) .pro-exp-list article{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+  body:not(.play-mode) .pro-exp-points{
+    grid-column:auto !important;
+    font-size:17px !important;
+  }
+}
