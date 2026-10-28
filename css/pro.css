@@ -1021,3 +1021,13 @@ body:not(.play-mode) .pro-mark{
   text-transform:none!important;
   letter-spacing:0!important;
 }
+
+
+/* Script accent for selected editorial word */
+body:not(.play-mode) .pro-section h2 em.pro-script-accent{
+  font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
