@@ -1514,3 +1514,30 @@ body:not(.play-mode) footer{
   body:not(.play-mode) .pro-contact{padding:90px 22px!important}
   body:not(.play-mode) .logo-track>a{flex-basis:70vw!important}
 }
+
+
+/* Full-name treatment for playful mode */
+.play-mode .brush-name{display:none!important}
+.play-mode .play-full-name{
+  position:absolute;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%) rotate(-3deg);
+  width:min(72vw,1080px);
+  text-align:center;
+  color:#9c6078;
+  font-family:'Caveat',cursive;
+  font-size:clamp(78px,10vw,170px);
+  font-weight:500;
+  line-height:.86;
+  letter-spacing:-.035em;
+  text-shadow:0 2px 0 #fff5;
+  pointer-events:none;
+}
+@media(max-width:760px){
+  .play-mode .play-full-name{
+    top:46%;
+    width:86vw;
+    font-size:clamp(58px,15vw,105px);
+  }
+}
