@@ -1,11 +1,3 @@
-@font-face{
-  font-family:'Garet Book';
-  src:url('https://assets.fontdiff.com/webfonts/garet-book.woff2') format('woff2');
-  font-weight:300;
-  font-style:normal;
-  font-display:swap;
-}
-
 /* Professional portfolio isolation layer.
    Two-font system only: Bodoni Moda + DM Sans. */
 
@@ -20,7 +12,7 @@ body:not(.play-mode){
   margin:0;
   background:#fff !important;
   color:var(--pro-ink) !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
 }
 
 /* Hard isolation: none of the playful world exists visually in recruiter mode. */
@@ -130,7 +122,7 @@ body:not(.play-mode) .pro-nav a{
   color:#627a70 !important;
   text-decoration:none !important;
   text-transform:uppercase !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -150,7 +142,7 @@ body:not(.play-mode) .pro-companies>p{
   margin:0 0 30px !important;
   color:#7d9189 !important;
   text-transform:uppercase !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -198,7 +190,7 @@ body:not(.play-mode) .pro-text-link{
   border:0 !important;
   border-bottom:1px solid #8ba59b !important;
   padding:8px 0 7px !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -266,7 +258,7 @@ body:not(.play-mode) .pro-principles p{
   padding:25px 0 !important;
   color:#697d75 !important;
   border-bottom:1px solid var(--pro-line) !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   font-weight:400 !important;
   line-height:1.72 !important;
@@ -307,7 +299,7 @@ body:not(.play-mode) .pro-impact-row span{
   margin-top:11px !important;
   color:#73877e !important;
   text-transform:uppercase !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.4 !important;
   letter-spacing:.15em !important;
@@ -340,14 +332,14 @@ body:not(.play-mode) .pro-exp-list h3{
 body:not(.play-mode) .pro-exp-list article>div>p{
   margin:0 !important;
   color:#72867d !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.5 !important;
   letter-spacing:.05em !important;
 }
 body:not(.play-mode) .pro-exp-list time{
   color:#899b94 !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.6 !important;
   letter-spacing:.07em !important;
@@ -355,7 +347,7 @@ body:not(.play-mode) .pro-exp-list time{
 body:not(.play-mode) .pro-exp-desc{
   margin:0 !important;
   color:#5e746b !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.78 !important;
 }
@@ -375,7 +367,7 @@ body:not(.play-mode) .pro-work-list article{
 body:not(.play-mode) .pro-work-list article>span{
   color:#889b93 !important;
   text-transform:uppercase !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.2 !important;
   letter-spacing:.16em !important;
@@ -390,7 +382,7 @@ body:not(.play-mode) .pro-work-list p{
   max-width:48ch !important;
   margin:0 !important;
   color:#647970 !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.75 !important;
 }
@@ -408,7 +400,7 @@ body:not(.play-mode) .pro-capability-lines p{
   padding:28px 0 !important;
   color:#64786f !important;
   border-bottom:1px solid var(--pro-line) !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.75 !important;
 }
@@ -434,7 +426,7 @@ body:not(.play-mode) .pro-education-row h2{
 body:not(.play-mode) .pro-education-row p{
   margin:3px 0 0 !important;
   color:#667a71 !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.72 !important;
 }
@@ -460,7 +452,7 @@ body:not(.play-mode) .pro-contact-links a{
   text-decoration:none !important;
   border-bottom:1px solid #8eaa9f !important;
   padding:7px 0 !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.2 !important;
 }
@@ -522,7 +514,7 @@ body:not(.play-mode) .logo-track img{
 }
 body:not(.play-mode) .logo-track span{
   color:#788a82 !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   font-weight:400 !important;
   line-height:1.2 !important;
@@ -536,7 +528,7 @@ body:not(.play-mode) footer{
   color:#7b8d85 !important;
   border-top:1px solid var(--pro-line) !important;
   padding:30px !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:14px !important;
   line-height:1.4 !important;
 }
@@ -599,7 +591,7 @@ body:not(.play-mode) .pro-name span{
   letter-spacing:.035em !important;
 }
 body:not(.play-mode) .pro-summary{
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:clamp(20px,1.55vw,24px) !important;
   line-height:1.62 !important;
 }
@@ -621,7 +613,7 @@ body:not(.play-mode) .pro-education-row p,
 body:not(.play-mode) .pro-contact-links a,
 body:not(.play-mode) .logo-track span,
 body:not(.play-mode) footer{
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
 }
 body:not(.play-mode) .pro-exp-desc,
 body:not(.play-mode) .pro-work-list p,
@@ -709,7 +701,7 @@ body:not(.play-mode) .pro-exp-points{
   margin:0 !important;
   padding:0 0 0 1.15em !important;
   color:#4f675e !important;
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif !important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif !important;
   font-size:17px !important;
   line-height:1.72 !important;
 }
@@ -786,7 +778,7 @@ body:not(.play-mode) .logo-track span{
 
 /* Garet + editorial serif trial: typography only */
 body:not(.play-mode){
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
   font-weight:300!important;
 }
 body:not(.play-mode) .pro-mark,
@@ -809,7 +801,7 @@ body:not(.play-mode) .pro-companies>p,
 body:not(.play-mode) .logo-track span,
 body:not(.play-mode) .pro-portrait figcaption,
 body:not(.play-mode) footer{
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
   font-weight:300!important;
 }
 body:not(.play-mode) .pro-name,
@@ -831,7 +823,7 @@ body:not(.play-mode) .pro-contact h2 em{
   font-weight:400!important;
 }
 body:not(.play-mode) .pro-mark{
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
   font-weight:300!important;
   letter-spacing:.035em!important;
 }
@@ -899,7 +891,7 @@ body:not(.play-mode) .pro-capability-lines span,
 body:not(.play-mode) .pro-companies>p,
 body:not(.play-mode) .logo-track span,
 body:not(.play-mode) footer{
-  font-family:'Garet Book','Avenir Next','Helvetica Neue',Arial,sans-serif!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
   font-weight:300!important;
 }
 body:not(.play-mode) .pro-name{
@@ -918,4 +910,92 @@ body:not(.play-mode) .pro-exp-list h3,
 body:not(.play-mode) .pro-work-list h3,
 body:not(.play-mode) .pro-principles strong{
   font-weight:400!important;
+}
+
+
+/* Reference-image hierarchy:
+   Libre Baskerville = headline/body
+   Acme = subhead/navigation/buttons/metadata
+   Pinyon Script = restrained Shelley-style accent
+   Libre Baskerville Italic = captions/subtitles */
+body:not(.play-mode){
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+}
+body:not(.play-mode) .pro-name,
+body:not(.play-mode) .pro-name span,
+body:not(.play-mode) .pro-summary,
+body:not(.play-mode) .pro-section h2,
+body:not(.play-mode) .pro-upfront-copy>p,
+body:not(.play-mode) .pro-principles strong,
+body:not(.play-mode) .pro-impact-row strong,
+body:not(.play-mode) .pro-exp-list h3,
+body:not(.play-mode) .pro-exp-points,
+body:not(.play-mode) .pro-work-list h3,
+body:not(.play-mode) .pro-work-list p,
+body:not(.play-mode) .pro-capability-lines p,
+body:not(.play-mode) .pro-education-row h2,
+body:not(.play-mode) .pro-education-row p,
+body:not(.play-mode) .pro-contact h2,
+body:not(.play-mode) .pro-contact-links a{
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+}
+body:not(.play-mode) .pro-mark,
+body:not(.play-mode) .pro-nav a,
+body:not(.play-mode) .pro-kicker,
+body:not(.play-mode) .pro-section-kicker,
+body:not(.play-mode) .pro-actions a,
+body:not(.play-mode) .pro-text-link,
+body:not(.play-mode) .pro-principles span,
+body:not(.play-mode) .pro-exp-title>p,
+body:not(.play-mode) .pro-exp-list time,
+body:not(.play-mode) .pro-work-list article>span,
+body:not(.play-mode) .pro-capability-lines span,
+body:not(.play-mode) .pro-companies>p,
+body:not(.play-mode) .logo-track span,
+body:not(.play-mode) footer{
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
+  font-weight:400!important;
+}
+body:not(.play-mode) .pro-name em{
+  font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  font-size:.62em!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  vertical-align:.08em!important;
+}
+body:not(.play-mode) .pro-section h2 em,
+body:not(.play-mode) .pro-contact h2 em{
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+  font-style:italic!important;
+}
+body:not(.play-mode) .pro-exp-title>p,
+body:not(.play-mode) .pro-exp-list time,
+body:not(.play-mode) .pro-work-list article>span,
+body:not(.play-mode) .logo-track span{
+  letter-spacing:.10em!important;
+}
+body:not(.play-mode) .pro-mark{
+  font-size:clamp(30px,2.6vw,44px)!important;
+  line-height:1!important;
+  letter-spacing:.08em!important;
+}
+body:not(.play-mode) .pro-nav a,
+body:not(.play-mode) .pro-kicker,
+body:not(.play-mode) .pro-section-kicker,
+body:not(.play-mode) .pro-actions a,
+body:not(.play-mode) .pro-text-link,
+body:not(.play-mode) .pro-companies>p{
+  letter-spacing:.12em!important;
+}
+body:not(.play-mode) .pro-name{
+  letter-spacing:.005em!important;
+  line-height:.97!important;
+}
+body:not(.play-mode) .pro-name span{
+  letter-spacing:.035em!important;
 }
