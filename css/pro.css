@@ -1011,3 +1011,13 @@ body:not(.play-mode) .pro-section h2 em.pro-emphasis{
   font-style:italic!important;
   font-weight:400!important;
 }
+
+
+/* Name treatment: quiet Libre Baskerville regular */
+body:not(.play-mode) .pro-mark{
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  text-transform:none!important;
+  letter-spacing:0!important;
+}
