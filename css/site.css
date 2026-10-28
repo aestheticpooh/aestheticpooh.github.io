@@ -254,3 +254,32 @@ body:not(.play-mode) footer{background:#071811;color:#87978f;border-top-color:#2
 
 @media(max-width:1100px){.pro-layout{grid-template-columns:1fr;gap:48px}.pro-signal{max-width:760px;width:100%}.brand-rail{grid-template-columns:repeat(4,1fr)}.brand-logo:nth-child(4){border-right:0}.brand-logo:nth-child(-n+4){border-bottom:1px solid #8b99923b}}
 @media(max-width:760px){.pro-hero{padding:22px 20px 24px}.pro-topbar{align-items:flex-start}.pro-nav{max-width:72%;gap:12px 16px;padding-right:22px}.pro-layout{padding:65px 0 38px;gap:38px}.pro-kicker{font-size:8px}.pro-hero .pro-name{font-size:54px;line-height:.92}.pro-hero .pro-name em{font-size:.58em;margin-top:10px}.pro-summary{font-size:19px;max-width:30ch}.pro-actions{gap:8px 18px}.pro-signal{padding:16px}.signal-grid{grid-template-columns:1fr 1fr}.signal-card{min-height:116px;padding:12px}.signal-method{font-size:7px}.brand-rail{grid-template-columns:repeat(2,1fr)}.brand-logo{height:64px}.brand-logo:nth-child(2n){border-right:0}.brand-logo:nth-child(-n+6){border-bottom:1px solid #8b99923b}.pro-footerline{gap:10px}.pro-footerline span+span:before{margin-right:10px}}
+
+
+/* Natalie-Dawson-inspired authority hierarchy + full-color company rail */
+.pro-hero .pro-name span{display:block}
+.pro-hero .pro-name span+span{margin-top:.04em}
+.pro-hero .pro-name em{margin-top:.18em;font-size:.55em;letter-spacing:.01em;text-transform:none;font-family:'Fraunces',serif;font-weight:400;color:#c7d0cb}
+.brand-proof>p{font-size:9px;letter-spacing:.22em;color:#aab8b1;margin-bottom:14px}
+.brand-rail{grid-template-columns:repeat(8,minmax(0,1fr));gap:0;background:#10271e;border:1px solid #8290894a}
+.brand-logo{height:102px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px 8px;text-decoration:none;border-right:1px solid #8290893d;background:#f7f8f6;transition:transform .22s ease,background .22s ease,box-shadow .22s ease}
+.brand-logo:last-child{border-right:0}
+.brand-logo:hover{transform:translateY(-3px);background:#fff;box-shadow:0 12px 24px #0000001f;z-index:2}
+.brand-image{height:48px;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.brand-image img{display:block;max-width:84%;max-height:46px;width:auto;height:auto;object-fit:contain;filter:none!important;opacity:1!important;mix-blend-mode:normal!important}
+.brand-name{display:block!important;color:#13251e!important;font:600 8px/1.25 'DM Sans',sans-serif!important;letter-spacing:.08em!important;text-transform:uppercase;text-align:center;max-width:15ch}
+.brand-logo:focus-visible{outline:2px solid #dce5e0;outline-offset:4px}
+@media(max-width:1100px){
+ .brand-rail{grid-template-columns:repeat(4,1fr)}
+ .brand-logo{border-bottom:1px solid #8290893d}
+ .brand-logo:nth-child(4n){border-right:0}
+ .brand-logo:nth-last-child(-n+4){border-bottom:0}
+}
+@media(max-width:760px){
+ .brand-rail{grid-template-columns:repeat(2,1fr)}
+ .brand-logo{height:92px}
+ .brand-logo:nth-child(odd){border-right:1px solid #8290893d}
+ .brand-logo:nth-child(even){border-right:0}
+ .brand-logo:nth-last-child(-n+2){border-bottom:0}
+ .brand-name{font-size:7px}
+}
