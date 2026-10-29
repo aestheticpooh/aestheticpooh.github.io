@@ -474,66 +474,104 @@
 })();
 
 
-/* Professional company marquee: slow auto-scroll, hover/focus pause, manual drag. */
+/* Professional company marquee: continuous motion, working links, and manual scrolling. */
 (() => {
   const scroller = document.querySelector('#logo-marquee');
   if (!scroller) return;
+  const track = scroller.querySelector('.logo-track');
+  const originals = [...track.children].filter(link => !link.hasAttribute('aria-hidden'));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = reduced.matches;
+  const speed = 60; // pixels per second; independent of the display refresh rate
+  let hovered = false;
+  let focused = false;
+  let pointerId = null;
   let dragging = false;
+  let suppressClick = false;
   let startX = 0;
   let startScroll = 0;
-  let raf = 0;
+  let manualUntil = 0;
+  let cycleWidth = 0;
+  let position = scroller.scrollLeft;
+  let appliedPosition = position;
   let last = 0;
-  const speed = 18; // pixels per second
 
-  function halfWidth() {
-    const track = scroller.querySelector('.logo-track');
-    return track ? track.scrollWidth / 2 : 0;
-  }
-  function tick(now) {
-    raf = requestAnimationFrame(tick);
-    if (paused || dragging || document.hidden || document.body.classList.contains('play-mode')) {
-      last = now;
-      return;
+  function measure() {
+    cycleWidth = track.children[originals.length].offsetLeft - originals[0].offsetLeft;
+    // Extra copies prevent a blank end on screens wider than one complete set.
+    if (!cycleWidth) return;
+    while (track.scrollWidth < cycleWidth + scroller.clientWidth) {
+      originals.forEach(link => {
+        const copy = link.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        copy.tabIndex = -1;
+        copy.querySelector('img').alt = '';
+        track.append(copy);
+      });
     }
+  }
+  new ResizeObserver(measure).observe(scroller);
+  measure();
+
+  function tick(now) {
+    requestAnimationFrame(tick);
     const dt = Math.min((now - (last || now)) / 1000, .05);
     last = now;
-    scroller.scrollLeft += speed * dt;
-    const half = halfWidth();
-    if (half && scroller.scrollLeft >= half) scroller.scrollLeft -= half;
+    if (reduced.matches || hovered || focused || pointerId !== null || now < manualUntil ||
+        document.hidden || document.body.classList.contains('play-mode') || !cycleWidth) {
+      position = appliedPosition = scroller.scrollLeft;
+      return;
+    }
+    // Preserve fractional pixels instead of rounding away motion on fast displays.
+    if (Math.abs(scroller.scrollLeft - appliedPosition) > 1) position = scroller.scrollLeft;
+    position = (position + speed * dt) % cycleWidth;
+    scroller.scrollLeft = position;
+    appliedPosition = scroller.scrollLeft;
   }
-  scroller.addEventListener('mouseenter', () => { paused = true; });
-  scroller.addEventListener('mouseleave', () => { paused = reduced.matches; });
-  scroller.addEventListener('focusin', () => { paused = true; });
+  scroller.addEventListener('mouseenter', () => { hovered = true; });
+  scroller.addEventListener('mouseleave', () => { hovered = false; });
+  scroller.addEventListener('focusin', () => { focused = true; });
   scroller.addEventListener('focusout', e => {
-    if (!scroller.contains(e.relatedTarget)) paused = reduced.matches;
+    focused = scroller.contains(e.relatedTarget);
   });
   scroller.addEventListener('pointerdown', e => {
-    if (e.button !== 0) return;
-    dragging = true;
-    paused = true;
+    if (e.button !== 0 || !e.isPrimary) return;
+    pointerId = e.pointerId;
+    suppressClick = false;
     startX = e.clientX;
     startScroll = scroller.scrollLeft;
-    scroller.setPointerCapture?.(e.pointerId);
   });
   scroller.addEventListener('pointermove', e => {
-    if (!dragging) return;
+    // Touch keeps native scrolling. Capture mouse drags only after a threshold,
+    // so an ordinary click still reaches its company link.
+    if (e.pointerId !== pointerId || e.pointerType !== 'mouse') return;
+    if (!dragging && Math.abs(e.clientX - startX) < 6) return;
+    if (!dragging) {
+      dragging = true;
+      suppressClick = true;
+      scroller.setPointerCapture(e.pointerId);
+      scroller.classList.add('is-dragging');
+    }
+    e.preventDefault();
     scroller.scrollLeft = startScroll - (e.clientX - startX);
   });
   const endDrag = e => {
-    if (!dragging) return;
+    if (e.pointerId !== pointerId) return;
+    if (scroller.hasPointerCapture(e.pointerId)) scroller.releasePointerCapture(e.pointerId);
+    pointerId = null;
     dragging = false;
-    scroller.releasePointerCapture?.(e.pointerId);
-    paused = reduced.matches;
+    scroller.classList.remove('is-dragging');
+    manualUntil = performance.now() + 1800;
   };
-  scroller.addEventListener('pointerup', endDrag);
-  scroller.addEventListener('pointercancel', endDrag);
-  scroller.addEventListener('wheel', () => {
-    paused = true;
-    clearTimeout(scroller._resumeTimer);
-    scroller._resumeTimer = setTimeout(() => { paused = reduced.matches; }, 1800);
-  }, { passive: true });
-  reduced.addEventListener('change', e => { paused = e.matches; });
-  raf = requestAnimationFrame(tick);
+  window.addEventListener('pointerup', endDrag);
+  window.addEventListener('pointercancel', endDrag);
+  scroller.addEventListener('dragstart', e => e.preventDefault());
+  scroller.addEventListener('click', e => {
+    if (suppressClick && e.detail !== 0) {
+      e.preventDefault();
+      e.stopPropagation();
+      suppressClick = false;
+    }
+  }, true);
+  scroller.addEventListener('wheel', () => { manualUntil = performance.now() + 1800; }, { passive: true });
+  requestAnimationFrame(tick);
 })();

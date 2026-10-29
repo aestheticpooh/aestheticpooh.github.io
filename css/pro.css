@@ -479,8 +479,15 @@ body:not(.play-mode) .logo-marquee{
   cursor:grab !important;
   scrollbar-width:none !important;
   -ms-overflow-style:none !important;
+  user-select:none;
 }
 body:not(.play-mode) .logo-marquee::-webkit-scrollbar{display:none !important}
+body:not(.play-mode) .logo-marquee.is-dragging,
+body:not(.play-mode) .logo-marquee.is-dragging a{cursor:grabbing !important}
+body:not(.play-mode) .logo-track>a:focus-visible{
+  outline:2px solid var(--pro-ink) !important;
+  outline-offset:-6px;
+}
 body:not(.play-mode) .logo-track{
   display:flex !important;
   align-items:center !important;
@@ -488,14 +495,14 @@ body:not(.play-mode) .logo-track{
   min-width:100% !important;
 }
 body:not(.play-mode) .logo-track>a{
-  flex:0 0 clamp(235px,20vw,310px) !important;
+  flex:0 0 clamp(208px,16vw,224px) !important;
   min-height:132px !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:center !important;
   justify-content:center !important;
-  gap:10px !important;
-  padding:20px 28px !important;
+  gap:0 !important;
+  padding:16px 12px !important;
   color:#22372f !important;
   text-decoration:none !important;
   background:#fff !important;
@@ -503,14 +510,21 @@ body:not(.play-mode) .logo-track>a{
 }
 body:not(.play-mode) .logo-track img{
   display:block !important;
-  max-width:82% !important;
-  max-height:70px !important;
-  width:auto !important;
-  height:auto !important;
+  max-width:100% !important;
+  max-height:100px !important;
+  width:100% !important;
+  height:100px !important;
   object-fit:contain !important;
   filter:none !important;
   opacity:1 !important;
   mix-blend-mode:normal !important;
+  pointer-events:none;
+}
+/* The official Beaverton symbol includes a generous white canvas. */
+body:not(.play-mode) .logo-track .logo-beaverton img{
+  object-fit:cover !important;
+  object-position:50% 47% !important;
+  scale:1.25;
 }
 body:not(.play-mode) .logo-track span{
   color:#788a82 !important;
@@ -561,7 +575,7 @@ body:not(.play-mode) footer{
   body:not(.play-mode) .pro-work-list{grid-template-columns:1fr !important}
   body:not(.play-mode) .pro-capability-lines p{grid-template-columns:1fr !important;gap:8px !important}
   body:not(.play-mode) .pro-contact{padding:94px 22px !important}
-  body:not(.play-mode) .logo-track>a{flex-basis:70vw !important}
+  body:not(.play-mode) .logo-track>a{flex-basis:208px !important}
 }
 
 
