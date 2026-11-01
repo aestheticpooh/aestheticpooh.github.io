@@ -1166,3 +1166,10 @@ body:not(.play-mode) .pro-work-link{
   letter-spacing:.08em!important;
   text-transform:uppercase!important;
 }
+
+
+/* Keep CPA reduction metric on one line */
+body:not(.play-mode) .pro-impact-row div:nth-child(2) strong{
+  white-space:nowrap!important;
+  font-size:clamp(40px,4vw,62px)!important;
+}
