@@ -1541,3 +1541,90 @@ body:not(.play-mode) footer{
     font-size:clamp(58px,15vw,105px);
   }
 }
+
+
+/* Playful hero cleanup — centered signature, tighter composition, true pole slide */
+@media(min-width:761px){
+  .play-mode .identity{
+    left:50%!important;
+    top:17.5%!important;
+    width:min(54vw,920px)!important;
+    transform:translateX(-50%)!important;
+    text-align:center!important;
+  }
+  .play-mode .play-full-name{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+    display:block!important;
+    width:100%!important;
+    transform:rotate(-3deg)!important;
+    font-size:clamp(82px,8.2vw,145px)!important;
+  }
+  .play-mode .identity-line{
+    margin:8px 0 0!important;
+  }
+}
+
+.play-mode .pole-entry{
+  height:72%!important;
+}
+.play-mode .pole-line{
+  z-index:1!important;
+}
+.play-mode .pole-bear{
+  z-index:2!important;
+  left:calc(50% - 22px)!important;
+  transform-origin:78% 44%!important;
+  animation:pole-slide-down 3.8s cubic-bezier(.22,.72,.24,1) .2s both,
+            pole-hold 1.35s ease-in-out 4s infinite alternate!important;
+}
+@keyframes pole-slide-down{
+  0%{
+    top:-145px;
+    transform:translateX(-50%) rotate(-10deg);
+  }
+  12%{
+    top:1%;
+    transform:translateX(-50%) rotate(-8deg);
+  }
+  28%{
+    top:14%;
+    transform:translateX(-50%) rotate(-5deg);
+  }
+  45%{
+    top:27%;
+    transform:translateX(-50%) rotate(-2deg);
+  }
+  62%{
+    top:40%;
+    transform:translateX(-50%) rotate(2deg);
+  }
+  78%{
+    top:52%;
+    transform:translateX(-50%) rotate(-1deg);
+  }
+  90%{
+    top:60%;
+    transform:translateX(-50%) rotate(1deg);
+  }
+  100%{
+    top:64%;
+    transform:translateX(-50%) rotate(0deg);
+  }
+}
+@keyframes pole-hold{
+  from{transform:translateX(-50%) translateY(0) rotate(-1deg)}
+  to{transform:translateX(-50%) translateY(5px) rotate(1deg)}
+}
+
+@media(max-width:760px){
+  .play-mode .play-full-name{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+    transform:rotate(-3deg)!important;
+  }
+  .play-mode .identity-line{margin-top:10px!important}
+  .play-mode .pole-bear{left:calc(50% - 16px)!important}
+}
