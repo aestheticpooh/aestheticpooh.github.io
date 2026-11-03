@@ -1652,3 +1652,135 @@ body:not(.play-mode) footer{
     margin:12px 0 0!important;
   }
 }
+
+
+/* Playful easter-egg hero: personal wordmark + centered mastery statement */
+.play-mode .brand{
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-weight:400!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+}
+
+.play-mode .intro.play-mastery{
+  position:absolute!important;
+  left:50%!important;
+  top:49%!important;
+  width:min(58vw,980px)!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:7!important;
+  text-align:center!important;
+  pointer-events:none!important;
+  isolation:isolate!important;
+}
+.play-mode .intro.play-mastery::before{
+  content:''!important;
+  position:absolute!important;
+  inset:-34px -44px -30px!important;
+  z-index:-1!important;
+  border-radius:28px!important;
+  background:radial-gradient(ellipse at center,#fff8eddf 0%,#fff8edb8 42%,#fff8ed00 76%)!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  filter:blur(2px)!important;
+}
+.play-mode .play-mastery .eyebrow{
+  margin:0 0 18px!important;
+  color:#665657!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
+  font-size:14px!important;
+  font-weight:400!important;
+  line-height:1.25!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+  white-space:normal!important;
+}
+.play-mode .play-mastery-title{
+  margin:0 auto!important;
+  max-width:920px!important;
+  color:#3e3434!important;
+  font-family:'Libre Baskerville',Georgia,serif!important;
+  font-size:clamp(52px,5.5vw,88px)!important;
+  font-weight:400!important;
+  line-height:.98!important;
+  letter-spacing:.01em!important;
+  text-align:center!important;
+  transform:none!important;
+}
+.play-mode .play-mastery-title em{
+  display:block!important;
+  margin-bottom:4px!important;
+  color:#9c6078!important;
+  font-family:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive!important;
+  font-size:.72em!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  line-height:.9!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.play-mode .play-mastery-title span{
+  display:block!important;
+}
+.play-mode .play-mastery-sub{
+  margin:22px auto 0!important;
+  color:#665657!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
+  font-size:14px!important;
+  line-height:1.45!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+}
+.play-mode .play-mastery .explore{
+  pointer-events:auto!important;
+  justify-content:center!important;
+  margin:26px auto 0!important;
+}
+.play-mode .play-full-name,
+.play-mode .identity{
+  display:none!important;
+}
+
+@media(max-width:1150px) and (min-width:761px){
+  .play-mode .intro.play-mastery{
+    top:50%!important;
+    width:min(68vw,760px)!important;
+  }
+  .play-mode .play-mastery-title{
+    font-size:clamp(46px,6vw,72px)!important;
+  }
+}
+
+@media(max-width:760px){
+  .play-mode .brand{
+    font-size:14px!important;
+    letter-spacing:.10em!important;
+  }
+  .play-mode .intro.play-mastery{
+    left:50%!important;
+    top:48%!important;
+    width:82vw!important;
+    transform:translate(-50%,-50%)!important;
+  }
+  .play-mode .intro.play-mastery::before{
+    inset:-24px -18px -22px!important;
+  }
+  .play-mode .play-mastery .eyebrow{
+    font-size:12px!important;
+    letter-spacing:.10em!important;
+    margin-bottom:14px!important;
+  }
+  .play-mode .play-mastery-title{
+    font-size:clamp(40px,11vw,58px)!important;
+    line-height:1.02!important;
+  }
+  .play-mode .play-mastery-sub{
+    font-size:12px!important;
+    letter-spacing:.08em!important;
+    line-height:1.55!important;
+    max-width:29ch!important;
+  }
+  .play-mode .play-mastery .explore{
+    margin-top:22px!important;
+  }
+}
