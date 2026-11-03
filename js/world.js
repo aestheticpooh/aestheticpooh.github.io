@@ -188,8 +188,9 @@
     syncMoney();
   });
 
-  // Money is created only by the visitor: load the sprayer, then aim and click.
-  let sprayerReady = false;
+  // Money is ready immediately: click or hold anywhere, or tap a bear, to spray.
+  let sprayerReady = true;
+  hero.dataset.sprayerReady = 'true';
   let sprayTimer = 0;
   let sprayStarted = 0;
   let lastSpray = -Infinity;
@@ -244,7 +245,7 @@
   }
   function sprayAt(x, y, target = nearestToy(x, y)) {
     const now = performance.now();
-    if (!sprayerReady || document.hidden || now - lastSpray < 110 || liveBills.size >= maxBills) return;
+    if (document.hidden || now - lastSpray < 110 || liveBills.size >= maxBills) return;
     lastSpray = now;
     const still = paused || reduced.matches;
     let angle = -.25;
@@ -296,7 +297,7 @@
     sprayTimer = setTimeout(keepSpraying, 155);
   }
   hero.addEventListener('pointerdown', e => {
-    if (!sprayerReady || !finePointer.matches || e.pointerType === 'touch' || e.button !== 0) return;
+    if (!finePointer.matches || e.pointerType === 'touch' || e.button !== 0) return;
     if (e.target.closest('a,button') && !e.target.closest('.toy')) return;
     stopSpraying();
     sprayStarted = performance.now();
@@ -319,11 +320,6 @@
       t.angularVelocity += (i % 2 ? -1 : 1) * .7;
     });
     t.el.addEventListener('click', e => {
-      if (!sprayerReady) {
-        say(t, 'load the sprayer ↑');
-        status.textContent = 'Click Spawn money to load the sprayer, then click a bear.';
-        return;
-      }
       const r = t.el.getBoundingClientRect();
       const x = e.detail ? e.clientX : r.left - 30;
       const y = e.detail ? e.clientY : r.top + r.height / 2;
@@ -335,9 +331,7 @@
     const now = performance.now();
     if (now - lastRain < 600) return;
     lastRain = now;
-    sprayerReady = true;
-    hero.dataset.sprayerReady = 'true';
-    document.querySelector('.play-hint').textContent = 'click or hold to spray the bears';
+    document.querySelector('.play-hint').textContent = 'click or hold anywhere to spray money';
     const still = paused || reduced.matches;
     const count = Math.min(still ? 6 : (innerWidth < 761 ? 18 : 30), maxBills - liveBills.size);
     for (let i = 0; i < count; i++) {
@@ -357,7 +351,7 @@
         animateBill(el, frames, { duration: 4300 + Math.random() * 1700, delay: Math.random() * 900, easing: 'linear', fill: 'both' });
       }
     }
-    status.textContent = 'Sprayer loaded! Click or hold to spray money at the bears.';
+    status.textContent = 'Money sprayed across the scene. Click or hold anywhere to keep spraying.';
   }
   document.querySelector('#spawn').addEventListener('click', rain);
 
