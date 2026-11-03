@@ -2163,3 +2163,10 @@ body footer .mode-egg:focus-visible{
 .play-mode #play-campaign-zum{
   scroll-margin-top:110px;
 }
+
+
+.play-mode #play-case-mightybuns,
+.play-mode #play-campaign-mightybuns,
+.play-mode #play-campaign-mightybuns-2{
+  scroll-margin-top:110px;
+}
