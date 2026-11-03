@@ -2026,3 +2026,65 @@ body:not(.play-mode) footer{
     height:88px!important;
   }
 }
+
+
+/* Discreet footer easter egg: tiny bear favicon with accessible hit area */
+footer{
+  position:relative!important;
+}
+body .mode-egg{
+  position:absolute!important;
+  top:50%!important;
+  right:18px!important;
+  left:auto!important;
+  bottom:auto!important;
+  z-index:30!important;
+  width:30px!important;
+  height:30px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:translateY(-50%)!important;
+  cursor:pointer!important;
+  opacity:.34!important;
+  transition:opacity .22s ease,transform .22s ease!important;
+}
+body .mode-egg img{
+  display:block!important;
+  width:14px!important;
+  height:14px!important;
+  object-fit:contain!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  filter:saturate(.82) contrast(.95)!important;
+  pointer-events:none!important;
+}
+body .mode-egg:hover,
+body .mode-egg:focus-visible{
+  opacity:.9!important;
+  transform:translateY(-50%) scale(1.08)!important;
+}
+body .mode-egg:focus-visible{
+  outline:1px solid currentColor!important;
+  outline-offset:2px!important;
+  border-radius:50%!important;
+}
+body .mode-egg span{
+  display:none!important;
+}
+@media(max-width:760px){
+  body .mode-egg{
+    right:10px!important;
+    width:28px!important;
+    height:28px!important;
+  }
+  body .mode-egg img{
+    width:13px!important;
+    height:13px!important;
+  }
+}
