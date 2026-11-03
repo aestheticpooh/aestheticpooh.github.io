@@ -1972,133 +1972,57 @@ body:not(.play-mode) footer{
 }
 
 
-/* Cozy blanket bear fills the open left side of the playful hero */
-.play-mode .toy-blanket{
-  left:5.2%;
-  top:39%;
-  width:18%;
-  aspect-ratio:.92;
-  z-index:5;
-  overflow:visible;
-  background:none;
-  border:0;
-}
-.play-mode .toy-blanket::after{display:none}
-.play-mode .toy-blanket .toy-motion{
-  width:100%;
-  height:100%;
-  overflow:visible;
-  transform-origin:50% 92%;
-  filter:drop-shadow(0 12px 16px #6a4b3520);
-}
-.play-mode .blanket-cocoon{
-  position:relative;
-  display:block;
-  width:100%;
-  height:100%;
-  border-radius:46% 46% 38% 38% / 34% 34% 22% 22%;
-  background:
-    radial-gradient(circle at 30% 22%,#fffdf8 0 2px,transparent 3px),
-    radial-gradient(circle at 68% 38%,#efe4d5 0 2px,transparent 3px),
-    radial-gradient(circle at 42% 70%,#fffdf8 0 2px,transparent 3px),
-    linear-gradient(145deg,#fffaf3 0%,#f4eadf 45%,#e8dbcd 100%);
-  box-shadow:
-    inset 9px 7px 18px #ffffffb8,
-    inset -12px -10px 22px #cdbbac66,
-    0 10px 20px #6a4b351c;
-}
-.play-mode .blanket-cocoon::before{
-  content:'';
-  position:absolute;
-  inset:8% 10% auto;
-  height:42%;
-  border-radius:50% 50% 42% 42%;
-  background:
-    radial-gradient(circle at 35% 30%,#fffdf9 0 2px,transparent 3px),
-    radial-gradient(circle at 62% 57%,#efe4d8 0 2px,transparent 3px),
-    linear-gradient(150deg,#fffdf8,#eee2d6);
-  box-shadow:inset 5px 5px 11px #fff,inset -8px -7px 13px #cdbdad66;
-  z-index:2;
-}
-.play-mode .blanket-cocoon::after{
-  content:'♡';
-  position:absolute;
-  right:14%;
-  bottom:16%;
-  z-index:6;
-  color:#b77a91;
-  font:600 clamp(18px,2vw,31px)/1 'Caveat',cursive;
-  transform:rotate(-8deg);
-  opacity:.85;
-}
-.play-mode .blanket-face-window{
-  position:absolute;
-  left:29%;
-  top:17%;
-  width:42%;
-  height:18%;
-  overflow:hidden;
-  border-radius:50% 50% 44% 44%;
-  z-index:4;
-  background:#b9855f;
-  box-shadow:inset 0 0 0 3px #eadbca88;
-}
-.play-mode .blanket-face-window img{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  width:190%!important;
-  height:190%!important;
-  max-width:none!important;
-  object-fit:cover!important;
-  object-position:50% 43%!important;
-  transform:translate(-50%,-43%) scale(1.05)!important;
-  filter:none!important;
-}
-.play-mode .blanket-hood{
-  position:absolute;
-  left:15%;
-  top:8%;
-  width:70%;
-  height:33%;
-  border-radius:50%;
-  border:clamp(11px,1.25vw,20px) solid #f6ede3;
-  z-index:5;
-  box-shadow:inset 0 0 0 2px #fff8,inset -4px -5px 8px #cab9aa55;
-}
-.play-mode .blanket-fold{
-  position:absolute;
-  left:9%;
-  width:82%;
-  height:21%;
-  border-radius:50%;
-  border-top:clamp(14px,1.7vw,26px) solid #f4eadf;
-  z-index:5;
-  transform-origin:center;
-  filter:drop-shadow(0 4px 2px #b39d8b22);
-}
-.play-mode .blanket-fold-one{
-  top:39%;
-  transform:rotate(-8deg);
-}
-.play-mode .blanket-fold-two{
-  top:55%;
-  transform:rotate(7deg);
-  opacity:.96;
-}
 
+/* Rebalance playful hero: thicker pole and sliding bear on the left */
+.play-mode .pole-entry{
+  left:16%!important;
+  right:auto!important;
+  top:0!important;
+  width:170px!important;
+  height:74%!important;
+}
+.play-mode .pole-line{
+  left:50%!important;
+  width:7px!important;
+  border-radius:999px!important;
+  background:linear-gradient(90deg,#c8c0ba 0%,#f7f2ee 20%,#918984 48%,#ece6e1 72%,#aaa19b 100%)!important;
+  box-shadow:
+    0 0 0 1px #6f666122,
+    2px 0 6px #0002,
+    inset 1px 0 1px #fff9!important;
+}
+.play-mode .pole-bear{
+  left:calc(50% - 24px)!important;
+  width:124px!important;
+  height:124px!important;
+  transform-origin:79% 44%!important;
+}
 @media(max-width:1150px) and (min-width:761px){
-  .play-mode .toy-blanket{
-    left:3%;
-    top:45%;
-    width:21%;
+  .play-mode .pole-entry{
+    left:13%!important;
+    width:145px!important;
+  }
+  .play-mode .pole-line{
+    width:6px!important;
+  }
+  .play-mode .pole-bear{
+    left:calc(50% - 20px)!important;
+    width:106px!important;
+    height:106px!important;
   }
 }
 @media(max-width:760px){
-  .play-mode .toy-blanket{
-    left:2%;
-    top:58%;
-    width:28%;
-    z-index:4;
+  .play-mode .pole-entry{
+    left:8%!important;
+    width:112px!important;
+    height:66%!important;
+  }
+  .play-mode .pole-line{
+    width:5px!important;
+  }
+  .play-mode .pole-bear{
+    left:calc(50% - 16px)!important;
+    width:88px!important;
+    height:88px!important;
   }
 }
