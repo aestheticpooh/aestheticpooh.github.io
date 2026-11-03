@@ -2125,3 +2125,41 @@ body footer .mode-egg:focus-visible{
     margin-left:0!important;
   }
 }
+
+
+/* Cross-links between playful experience and proof */
+.play-mode .job-links,
+.play-mode .project-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  margin-top:16px;
+}
+.play-mode .job-links a,
+.play-mode .project-links a,
+.play-mode .portfolio-film__back{
+  color:#84556c;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.09em;
+  border-bottom:1px solid #b68da0;
+  padding-bottom:3px;
+}
+.play-mode .job-links a:hover,
+.play-mode .project-links a:hover,
+.play-mode .portfolio-film__back:hover{
+  color:#6f4058;
+  border-bottom-color:#6f4058;
+}
+.play-mode #work-beaverton,
+.play-mode #work-papa,
+.play-mode #work-gopuff,
+.play-mode #work-zum,
+.play-mode #play-case-beaverton,
+.play-mode #play-case-papa,
+.play-mode #play-campaign-gopuff,
+.play-mode #play-campaign-zum{
+  scroll-margin-top:110px;
+}
