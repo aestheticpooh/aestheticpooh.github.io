@@ -449,9 +449,9 @@
   const body = document.body;
   const hero = document.querySelector('.hero');
   function setMode(play) {
-    body.classList.toggle('play-mode', play);
+    body.classList.toggle('visual-mode', play);
     button.setAttribute('aria-pressed', String(play));
-    button.setAttribute('aria-label', play ? 'Return to professional portfolio' : 'Open alternate interactive portfolio');
+    button.setAttribute('aria-label', play ? 'Return to clean portfolio' : 'Open playful background');
     if (play) {
       requestAnimationFrame(() => {
         hero?.getBoundingClientRect();
@@ -461,7 +461,7 @@
   }
   setMode(false);
   button.addEventListener('click', () => {
-    const play = !body.classList.contains('play-mode');
+    const play = !body.classList.contains('visual-mode');
     setMode(play);
     window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
@@ -511,7 +511,7 @@
     const dt = Math.min((now - (last || now)) / 1000, .05);
     last = now;
     if (reduced.matches || hovered || focused || pointerId !== null || now < manualUntil ||
-        document.hidden || document.body.classList.contains('play-mode') || !cycleWidth) {
+        document.hidden || !cycleWidth) {
       position = appliedPosition = scroller.scrollLeft;
       return;
     }
