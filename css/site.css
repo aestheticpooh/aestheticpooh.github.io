@@ -2088,3 +2088,40 @@ body .mode-egg span{
     height:13px!important;
   }
 }
+
+
+/* Keep footer easter egg beside the visible footer signature, away from motion controls */
+body footer{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+}
+body footer .mode-egg{
+  position:relative!important;
+  top:auto!important;
+  right:auto!important;
+  left:auto!important;
+  bottom:auto!important;
+  flex:0 0 auto!important;
+  width:28px!important;
+  height:28px!important;
+  transform:none!important;
+  margin-left:2px!important;
+}
+body footer .mode-egg:hover,
+body footer .mode-egg:focus-visible{
+  transform:scale(1.08)!important;
+}
+@media(max-width:760px){
+  body footer{
+    gap:5px!important;
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+  body footer .mode-egg{
+    width:26px!important;
+    height:26px!important;
+    margin-left:0!important;
+  }
+}
