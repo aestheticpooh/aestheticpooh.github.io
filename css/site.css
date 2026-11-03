@@ -1628,3 +1628,27 @@ body:not(.play-mode) footer{
   .play-mode .identity-line{margin-top:10px!important}
   .play-mode .pole-bear{left:calc(50% - 16px)!important}
 }
+
+
+/* Final playful hero identity placement — center the whole block, not just the text */
+@media(min-width:761px){
+  .play-mode .identity{
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    width:min(58vw,980px)!important;
+    transform:translate(-50%,-50%)!important;
+    text-align:center!important;
+  }
+  .play-mode .play-full-name{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+    width:100%!important;
+    margin:0 auto!important;
+    transform:rotate(-3deg)!important;
+  }
+  .play-mode .identity-line{
+    margin:12px 0 0!important;
+  }
+}
