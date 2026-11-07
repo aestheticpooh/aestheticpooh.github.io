@@ -1417,3 +1417,14 @@ body:not(.play-mode) .pro-campaigns-section .campaigns-to-experience:hover{
   color:#17392f!important;
   border-bottom-color:#17392f!important;
 }
+
+
+/* Compact square marks for companies whose live brand asset is favicon-style */
+body:not(.play-mode) .logo-track>a.logo-icon img{
+  width:64px!important;
+  height:64px!important;
+  max-width:64px!important;
+  max-height:64px!important;
+  object-fit:contain!important;
+  scale:1!important;
+}
