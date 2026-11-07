@@ -1472,3 +1472,347 @@ body:not(.play-mode) .stride-lockup-text{
   letter-spacing:-.035em!important;
   white-space:nowrap!important;
 }
+
+
+/* =========================================================
+   MOBILE HARDENING + FULL BEAVERTON WORDMARK — 2026-11-06
+   ========================================================= */
+
+/* The replacement Beaverton asset is the complete logo lockup, not a cropped symbol. */
+body:not(.play-mode) .logo-track .logo-beaverton img{
+  width:168px!important;
+  height:104px!important;
+  max-width:168px!important;
+  max-height:104px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  scale:1!important;
+}
+.play-mode .play-company-logos .logo-beaverton img{
+  width:auto!important;
+  height:auto!important;
+  max-width:92%!important;
+  max-height:92px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  scale:1!important;
+}
+
+@media(max-width:760px){
+  html{scroll-padding-top:72px}
+  body:not(.play-mode){
+    overflow-x:hidden!important;
+  }
+
+  /* Header: stack instead of squeezing the name and nav side-by-side. */
+  body:not(.play-mode) .pro-hero{
+    min-height:auto!important;
+    max-height:none!important;
+    padding:20px 18px 48px!important;
+  }
+  body:not(.play-mode) .pro-topbar{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    gap:14px!important;
+    padding:0 0 16px!important;
+  }
+  body:not(.play-mode) .pro-mark{
+    max-width:100%!important;
+    font-size:clamp(30px,9vw,38px)!important;
+    line-height:1.05!important;
+    white-space:nowrap!important;
+  }
+  body:not(.play-mode) .pro-nav{
+    width:100%!important;
+    max-width:none!important;
+    justify-content:flex-start!important;
+    gap:6px 16px!important;
+    padding-right:0!important;
+  }
+  body:not(.play-mode) .pro-nav a{
+    font-size:14px!important;
+    line-height:1.35!important;
+    letter-spacing:.10em!important;
+    padding:5px 0!important;
+  }
+
+  /* Hero: remove desktop-sized vertical gaps and keep the headline inside the viewport. */
+  body:not(.play-mode) .pro-hero-stage{
+    width:100%!important;
+    margin:0!important;
+    padding:58px 0 34px!important;
+  }
+  body:not(.play-mode) .pro-hero-copy{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  body:not(.play-mode) .pro-kicker{
+    margin-bottom:18px!important;
+  }
+  body:not(.play-mode) .pro-name{
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(40px,12.5vw,54px)!important;
+    line-height:1.04!important;
+    letter-spacing:0!important;
+  }
+  body:not(.play-mode) .pro-name em{
+    display:block!important;
+    margin:0 0 .28em!important;
+    font-size:.50em!important;
+    line-height:1.05!important;
+  }
+  body:not(.play-mode) .pro-name span{
+    display:block!important;
+    max-width:100%!important;
+  }
+  body:not(.play-mode) .pro-summary{
+    max-width:none!important;
+    margin-top:22px!important;
+    font-size:18px!important;
+    line-height:1.58!important;
+  }
+  body:not(.play-mode) .pro-actions{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:10px!important;
+    margin-top:26px!important;
+  }
+  body:not(.play-mode) .pro-actions a{
+    max-width:100%!important;
+    white-space:normal!important;
+  }
+
+  /* Main sections: consistent phone gutters and less oversized typography. */
+  body:not(.play-mode) .pro-main section{
+    padding:68px 20px!important;
+  }
+  body:not(.play-mode) .pro-section-kicker{
+    margin-bottom:18px!important;
+  }
+  body:not(.play-mode) .pro-section h2,
+  body:not(.play-mode) .pro-contact h2{
+    font-size:clamp(38px,10.5vw,46px)!important;
+    line-height:1.08!important;
+    letter-spacing:-.025em!important;
+  }
+  body:not(.play-mode) .pro-upfront-grid{
+    gap:32px!important;
+  }
+  body:not(.play-mode) .pro-upfront-copy>p{
+    font-size:18px!important;
+    line-height:1.65!important;
+  }
+  body:not(.play-mode) .pro-principles p{
+    grid-template-columns:28px minmax(0,1fr)!important;
+    gap:8px 10px!important;
+  }
+  body:not(.play-mode) .pro-principles strong{
+    font-size:21px!important;
+    line-height:1.35!important;
+  }
+
+  /* Metrics stay compact but readable. */
+  body:not(.play-mode) .pro-impact-row{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:28px 18px!important;
+  }
+  body:not(.play-mode) .pro-impact-row>div{
+    min-width:0!important;
+  }
+  body:not(.play-mode) .pro-impact-row strong{
+    font-size:clamp(30px,9vw,42px)!important;
+    line-height:1.05!important;
+  }
+
+  /* Experience and project rows become true single-column cards/rows. */
+  body:not(.play-mode) .pro-section-head{
+    display:block!important;
+    margin-bottom:42px!important;
+  }
+  body:not(.play-mode) .pro-section-head .pro-section-kicker{
+    margin-bottom:16px!important;
+  }
+  body:not(.play-mode) .pro-exp-list article{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:12px!important;
+    padding:30px 0 34px!important;
+  }
+  body:not(.play-mode) .pro-exp-title,
+  body:not(.play-mode) .pro-exp-points,
+  body:not(.play-mode) .pro-exp-links{
+    min-width:0!important;
+  }
+  body:not(.play-mode) .pro-exp-list h3{
+    font-size:25px!important;
+    line-height:1.25!important;
+  }
+  body:not(.play-mode) .pro-exp-list time{
+    padding-top:0!important;
+  }
+  body:not(.play-mode) .pro-exp-points{
+    grid-column:auto!important;
+    max-width:none!important;
+    margin-top:6px!important;
+    padding-left:20px!important;
+    font-size:16px!important;
+    line-height:1.72!important;
+  }
+  body:not(.play-mode) .pro-exp-points li+li{
+    margin-top:11px!important;
+  }
+  body:not(.play-mode) .pro-exp-links{
+    gap:8px 14px!important;
+    margin-top:10px!important;
+  }
+
+  body:not(.play-mode) .pro-work-list{
+    grid-template-columns:1fr!important;
+    gap:0!important;
+  }
+  body:not(.play-mode) .pro-work-list article{
+    min-width:0!important;
+    padding:28px 0 32px!important;
+  }
+  body:not(.play-mode) .pro-work-list h3{
+    font-size:27px!important;
+    line-height:1.28!important;
+  }
+  body:not(.play-mode) .pro-work-list p,
+  body:not(.play-mode) .pro-capability-lines p,
+  body:not(.play-mode) .pro-education-row p{
+    max-width:none!important;
+    font-size:16px!important;
+    line-height:1.7!important;
+  }
+  body:not(.play-mode) .pro-work-actions{
+    gap:9px 14px!important;
+  }
+
+  /* Campaign video cards should never force horizontal overflow. */
+  body:not(.play-mode) .portfolio-films,
+  body:not(.play-mode) .portfolio-films__grid,
+  body:not(.play-mode) .portfolio-film,
+  body:not(.play-mode) .portfolio-film__content{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  body:not(.play-mode) .portfolio-films__grid{
+    grid-template-columns:1fr!important;
+    gap:18px!important;
+  }
+  body:not(.play-mode) .portfolio-film--featured{
+    display:flex!important;
+    grid-column:auto!important;
+    flex-direction:column!important;
+  }
+  body:not(.play-mode) .portfolio-film__content{
+    padding:20px!important;
+  }
+  body:not(.play-mode) .portfolio-film__footer{
+    align-items:flex-start!important;
+  }
+
+  /* Contact links stack and wrap rather than running off-screen. */
+  body:not(.play-mode) .pro-contact{
+    padding:76px 20px!important;
+  }
+  body:not(.play-mode) .pro-contact-links{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:12px!important;
+    max-width:100%!important;
+  }
+  body:not(.play-mode) .pro-contact-links a{
+    max-width:100%!important;
+    overflow-wrap:anywhere!important;
+    white-space:normal!important;
+  }
+
+  /* Companies rail: smaller cards, touch-scroll friendly, full Beaverton lockup visible. */
+  body:not(.play-mode) .pro-companies{
+    padding:44px 0 52px!important;
+  }
+  body:not(.play-mode) .pro-companies>p.pro-companies-title{
+    padding:0 20px!important;
+    margin-bottom:26px!important;
+  }
+  body:not(.play-mode) .pro-companies-script{
+    font-size:38px!important;
+  }
+  body:not(.play-mode) .pro-companies-serif{
+    font-size:27px!important;
+    line-height:1.08!important;
+    letter-spacing:.045em!important;
+  }
+  body:not(.play-mode) .logo-marquee{
+    -webkit-overflow-scrolling:touch!important;
+    overscroll-behavior-inline:contain!important;
+  }
+  body:not(.play-mode) .logo-track>a{
+    flex-basis:176px!important;
+    min-height:112px!important;
+    padding:12px 14px!important;
+  }
+  body:not(.play-mode) .logo-track img{
+    height:76px!important;
+    max-height:76px!important;
+  }
+  body:not(.play-mode) .logo-track .logo-beaverton img{
+    width:150px!important;
+    height:96px!important;
+    max-width:150px!important;
+    max-height:96px!important;
+    object-fit:contain!important;
+    scale:1!important;
+  }
+  body:not(.play-mode) .logo-track>a.logo-wordmark>img{
+    max-width:82%!important;
+    max-height:50px!important;
+  }
+  body:not(.play-mode) .stride-lockup{
+    gap:8px!important;
+  }
+  body:not(.play-mode) .stride-lockup img{
+    width:32px!important;
+    height:32px!important;
+    max-width:32px!important;
+    max-height:32px!important;
+  }
+  body:not(.play-mode) .stride-lockup-text{
+    font-size:19px!important;
+  }
+
+  body:not(.play-mode) .footer-pro{
+    max-width:100%!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+  }
+}
+
+@media(max-width:430px){
+  body:not(.play-mode) .pro-nav{
+    gap:4px 14px!important;
+  }
+  body:not(.play-mode) .pro-name{
+    font-size:clamp(38px,12vw,48px)!important;
+  }
+  body:not(.play-mode) .pro-main section{
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+  body:not(.play-mode) .pro-impact-row{
+    gap:24px 14px!important;
+  }
+  body:not(.play-mode) .pro-companies-serif{
+    font-size:24px!important;
+  }
+  body:not(.play-mode) .logo-track>a{
+    flex-basis:162px!important;
+  }
+}
