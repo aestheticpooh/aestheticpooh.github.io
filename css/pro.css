@@ -1816,3 +1816,53 @@ body:not(.play-mode) .logo-track .logo-beaverton img{
     flex-basis:162px!important;
   }
 }
+
+
+/* Mobile principles layout: explicitly place the description in the wide column.
+   Previously the unwrapped text became an anonymous grid item in column one,
+   causing the one-word-per-line overflow shown on iPhone. */
+body:not(.play-mode) .pro-principles .pro-principle-description{
+  display:block!important;
+  min-width:0!important;
+  color:#697d75!important;
+  font:inherit!important;
+  letter-spacing:normal!important;
+}
+@media(max-width:760px){
+  body:not(.play-mode) .pro-principles p{
+    display:grid!important;
+    grid-template-columns:34px minmax(0,1fr)!important;
+    align-items:start!important;
+    column-gap:16px!important;
+    row-gap:8px!important;
+    padding:24px 0!important;
+    min-width:0!important;
+  }
+  body:not(.play-mode) .pro-principles p>span:first-child{
+    grid-column:1!important;
+    grid-row:1!important;
+    padding-top:3px!important;
+  }
+  body:not(.play-mode) .pro-principles p>strong{
+    grid-column:2!important;
+    grid-row:1!important;
+    min-width:0!important;
+    font-size:clamp(20px,5.5vw,23px)!important;
+    line-height:1.36!important;
+  }
+  body:not(.play-mode) .pro-principles p>.pro-principle-description{
+    grid-column:2!important;
+    grid-row:2!important;
+    min-width:0!important;
+    max-width:38ch!important;
+    font-size:16px!important;
+    line-height:1.7!important;
+    overflow-wrap:break-word!important;
+  }
+}
+@media(max-width:380px){
+  body:not(.play-mode) .pro-principles p{
+    grid-template-columns:30px minmax(0,1fr)!important;
+    column-gap:12px!important;
+  }
+}
