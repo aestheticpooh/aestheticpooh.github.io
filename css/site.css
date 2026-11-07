@@ -2192,3 +2192,12 @@ body footer .mode-egg:focus-visible{
   color:#6f4058;
   border-bottom-color:#6f4058;
 }
+
+
+.play-mode .play-company-logos a.logo-icon img{
+  width:58px!important;
+  height:58px!important;
+  max-width:58px!important;
+  max-height:58px!important;
+  object-fit:contain!important;
+}
