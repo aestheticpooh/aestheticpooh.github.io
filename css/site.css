@@ -2170,3 +2170,25 @@ body footer .mode-egg:focus-visible{
 .play-mode #play-campaign-mightybuns-2{
   scroll-margin-top:110px;
 }
+
+
+/* Campaign proof now introduces the deeper playful résumé */
+.play-mode .play-campaigns-section{
+  position:relative;
+}
+.play-mode .play-campaigns-section .campaigns-to-experience{
+  display:inline-block;
+  margin-top:34px;
+  color:#84556c;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.10em;
+  border-bottom:1px solid #b68da0;
+  padding-bottom:4px;
+}
+.play-mode .play-campaigns-section .campaigns-to-experience:hover{
+  color:#6f4058;
+  border-bottom-color:#6f4058;
+}
