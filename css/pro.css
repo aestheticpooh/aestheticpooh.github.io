@@ -1393,3 +1393,27 @@ body:not(.play-mode) #campaign-mightybuns,
 body:not(.play-mode) #campaign-mightybuns-2{
   scroll-margin-top:96px!important;
 }
+
+
+/* Campaign proof appears before the résumé-style experience */
+body:not(.play-mode) .pro-campaigns-section{
+  background:#f7f9f8!important;
+  border-top:1px solid var(--pro-line)!important;
+  border-bottom:1px solid var(--pro-line)!important;
+}
+body:not(.play-mode) .pro-campaigns-section .campaigns-to-experience{
+  display:inline-block!important;
+  margin-top:34px!important;
+  color:#315c4d!important;
+  font-family:'Acme','Arial Narrow',Arial,sans-serif!important;
+  font-size:14px!important;
+  letter-spacing:.09em!important;
+  text-transform:uppercase!important;
+  text-decoration:none!important;
+  border-bottom:1px solid #9eb2a9!important;
+  padding-bottom:4px!important;
+}
+body:not(.play-mode) .pro-campaigns-section .campaigns-to-experience:hover{
+  color:#17392f!important;
+  border-bottom-color:#17392f!important;
+}
