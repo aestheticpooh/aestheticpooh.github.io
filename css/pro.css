@@ -1428,3 +1428,47 @@ body:not(.play-mode) .logo-track>a.logo-icon img{
   object-fit:contain!important;
   scale:1!important;
 }
+
+
+/* Full wordmark treatment for LinkedIn, Crown Worldwide, and Stride Logistics */
+body:not(.play-mode) .logo-track>a.logo-wordmark{
+  flex-direction:row!important;
+  gap:10px!important;
+}
+body:not(.play-mode) .logo-track>a.logo-wordmark>img{
+  width:auto!important;
+  height:auto!important;
+  max-width:78%!important;
+  max-height:58px!important;
+  object-fit:contain!important;
+  scale:1!important;
+}
+body:not(.play-mode) .logo-track>a.logo-linkedin>img{
+  max-width:76%!important;
+  max-height:52px!important;
+}
+body:not(.play-mode) .logo-track>a.logo-crown>img{
+  max-width:72%!important;
+  max-height:58px!important;
+}
+body:not(.play-mode) .logo-track>a.logo-stride{
+  justify-content:center!important;
+}
+body:not(.play-mode) .stride-lockup{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+}
+body:not(.play-mode) .stride-lockup img{
+  width:38px!important;
+  height:38px!important;
+  max-width:38px!important;
+  max-height:38px!important;
+  object-fit:contain!important;
+}
+body:not(.play-mode) .stride-lockup-text{
+  color:#1d2a25!important;
+  font:600 24px/1 'DM Sans',sans-serif!important;
+  letter-spacing:-.035em!important;
+  white-space:nowrap!important;
+}
