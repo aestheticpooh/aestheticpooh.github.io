@@ -32,3 +32,12 @@
 .play-mode .portfolio-film__footer a{color:#895269}
 .play-mode .portfolio-film__footer small{color:#938481}
 @media(max-width:820px){.portfolio-films__grid{grid-template-columns:1fr}.portfolio-film--featured{grid-column:auto;display:flex;flex-direction:column}.portfolio-film--featured .portfolio-film__media{aspect-ratio:16/9;min-height:0}.portfolio-films__head>p{font-size:14px}}
+
+
+/* Standalone campaign section: no inherited divider/margin from its former lower placement */
+.pro-campaigns-section .portfolio-films,
+.play-campaigns-section .portfolio-films{
+  margin-top:0;
+  padding-top:0;
+  border-top:0;
+}
