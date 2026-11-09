@@ -2242,3 +2242,536 @@ body footer .mode-egg:focus-visible{
   letter-spacing:-.03em!important;
   white-space:nowrap!important;
 }
+
+
+/* ============================================================
+   Easter egg: mobile-first bear world and readable playful résumé
+   The desktop scene is deliberately unchanged.
+   ============================================================ */
+.play-mode .play-principles .play-principle-description{
+  display:block;
+  min-width:0;
+  color:#665b55;
+  font-weight:400;
+  letter-spacing:normal;
+}
+
+@media (max-width:760px){
+  /* Hero content participates in layout; absolute artwork stays in the scene. */
+  .play-mode .hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:auto;
+    min-height:max(855px,100svh);
+    max-height:none;
+    padding:148px 18px 250px;
+    overflow:hidden;
+    overflow:clip;
+    isolation:isolate;
+  }
+  .play-mode .world{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+  }
+  .play-mode .scenery img{
+    object-position:54% center;
+  }
+  /* A translucent reading area lets the art stay visible behind the copy. */
+  .play-mode .hero::after{
+    content:"";
+    position:absolute;
+    inset:12% 0 19%;
+    pointer-events:none;
+    z-index:3;
+    background:radial-gradient(ellipse 74% 66% at 50% 41%,rgba(255,251,246,.72) 0%,rgba(255,249,243,.51) 48%,transparent 83%);
+  }
+
+  /* Two clean header rows rather than overlapping names, links, and controls. */
+  .play-mode .topbar{
+    position:absolute;
+    top:15px;
+    left:18px;
+    right:18px;
+    width:auto;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    column-gap:12px;
+    row-gap:8px;
+    align-items:center;
+    z-index:20;
+  }
+  .play-mode .brand{
+    grid-column:1;
+    min-width:0;
+    font-size:clamp(13px,3.6vw,16px)!important;
+    line-height:1.25;
+    letter-spacing:.055em!important;
+    white-space:nowrap;
+  }
+  .play-mode .rain-button{
+    grid-column:2;
+    justify-self:end;
+    min-height:44px;
+    gap:7px;
+    padding:8px 0 8px 8px;
+    font-size:11px;
+    letter-spacing:.035em;
+    color:#4d4042;
+    white-space:nowrap;
+  }
+  .play-mode .rain-button .plus{
+    width:16px;
+    height:16px;
+  }
+  .play-mode .rain-button .plus::before,
+  .play-mode .rain-button .plus::after{
+    width:16px;
+    top:8px;
+  }
+  .play-mode .topnav{
+    grid-column:1/-1;
+    order:0;
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    min-width:0;
+    width:100%;
+    margin:0;
+    padding-top:4px;
+    border-top:1px solid rgba(94,78,77,.22);
+  }
+  .play-mode .topnav a{
+    min-height:40px;
+    display:inline-flex;
+    align-items:center;
+    padding:7px 0;
+    font-size:11px;
+    letter-spacing:.06em;
+    white-space:nowrap;
+  }
+
+  /* Portrait hero: center the story but let the height expand for small phones. */
+  .play-mode .intro.play-mastery{
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    width:100%!important;
+    max-width:450px!important;
+    margin:0 auto!important;
+    padding:0 4px!important;
+    transform:none!important;
+    z-index:8!important;
+    text-align:center!important;
+    min-width:0!important;
+  }
+  .play-mode .intro.play-mastery::before{
+    inset:-19px -8px -22px!important;
+    border-radius:22px!important;
+    background:radial-gradient(ellipse at center,rgba(255,249,243,.66) 0%,rgba(255,249,243,.4) 65%,transparent 92%)!important;
+    filter:none!important;
+  }
+  .play-mode .play-mastery .eyebrow{
+    margin-bottom:12px!important;
+    font-size:12px!important;
+    line-height:1.35!important;
+    letter-spacing:.16em!important;
+  }
+  .play-mode .play-mastery-title{
+    max-width:100%!important;
+    font-size:clamp(35px,9.5vw,53px)!important;
+    line-height:1.11!important;
+    letter-spacing:-.03em!important;
+    overflow-wrap:normal!important;
+  }
+  .play-mode .play-mastery-title em{
+    margin-bottom:8px!important;
+    font-size:.84em!important;
+    line-height:.9!important;
+    letter-spacing:0!important;
+  }
+  .play-mode .play-mastery-title span{
+    display:block!important;
+    max-width:100%!important;
+    text-wrap:balance;
+  }
+  .play-mode .play-mastery-summary{
+    max-width:34ch!important;
+    margin:20px auto 0!important;
+    font-size:16px!important;
+    line-height:1.65!important;
+    text-wrap:pretty;
+  }
+  .play-mode .play-mastery-actions{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    flex-wrap:nowrap!important;
+    justify-content:center!important;
+    gap:9px!important;
+    width:100%!important;
+    margin:22px auto 0!important;
+    pointer-events:auto!important;
+  }
+  .play-mode .play-mastery-actions a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    width:min(100%,315px)!important;
+    min-height:44px!important;
+    padding:10px 14px!important;
+    border:1px solid rgba(114,82,96,.38)!important;
+    border-radius:999px!important;
+    background:rgba(255,250,246,.86)!important;
+    color:#57424b!important;
+    font-size:12px!important;
+    line-height:1.35!important;
+    letter-spacing:.065em!important;
+    text-align:center!important;
+    text-decoration:none!important;
+    white-space:normal!important;
+  }
+  .play-mode .play-mastery-actions a:first-child{
+    background:#7e586a!important;
+    border-color:#7e586a!important;
+    color:#fffdfb!important;
+  }
+  .play-mode .play-mastery-actions a:focus-visible{
+    outline:2px solid #6b4559!important;
+    outline-offset:3px!important;
+  }
+
+  /* Bears are different sizes and at different depths, framing rather than
+     covering the text. Keep every character independently tappable. */
+  .play-mode .toys{z-index:4;pointer-events:none}
+  .play-mode .toy{pointer-events:auto}
+  .play-mode .toy-pink-peek{
+    display:block!important;
+    left:-7%!important;
+    right:auto!important;
+    top:19%!important;
+    width:clamp(68px,21vw,100px)!important;
+    opacity:.9;
+    z-index:4;
+  }
+  .play-mode .toy-sunglasses{
+    display:block!important;
+    left:auto!important;
+    right:-5%!important;
+    top:32%!important;
+    width:clamp(74px,21vw,108px)!important;
+    opacity:.92;
+  }
+  .play-mode .toy-white{
+    display:block!important;
+    left:13%!important;
+    right:auto!important;
+    top:75%!important;
+    width:clamp(76px,24vw,112px)!important;
+  }
+  .play-mode .toy-distant{
+    display:block!important;
+    left:54%!important;
+    right:auto!important;
+    top:78%!important;
+    width:clamp(44px,12vw,62px)!important;
+    opacity:.83;
+  }
+  .play-mode .toy-pink-right{
+    display:block!important;
+    left:auto!important;
+    right:21%!important;
+    top:71%!important;
+    width:clamp(60px,17vw,86px)!important;
+    opacity:.95;
+  }
+  .play-mode .toy-reclining{
+    display:block!important;
+    left:auto!important;
+    right:-12%!important;
+    top:82%!important;
+    bottom:auto!important;
+    width:clamp(130px,39vw,198px)!important;
+    height:auto!important;
+    aspect-ratio:1.9!important;
+  }
+  .play-mode .toy-near-left{
+    display:block!important;
+    left:-9%!important;
+    right:auto!important;
+    top:auto!important;
+    bottom:-4%!important;
+    width:clamp(96px,30vw,148px)!important;
+    filter:blur(1.4px)!important;
+    opacity:.85!important;
+  }
+  .play-mode .toy-near-right{
+    display:block!important;
+    left:auto!important;
+    right:-13%!important;
+    top:auto!important;
+    bottom:-8%!important;
+    width:clamp(90px,28vw,138px)!important;
+    filter:blur(1.7px)!important;
+    opacity:.8!important;
+  }
+  .play-mode .pole-entry{
+    z-index:5!important;
+    top:92px!important;
+    left:-26px!important;
+    right:auto!important;
+    width:80px!important;
+    height:246px!important;
+    opacity:.94;
+  }
+  .play-mode .pole-line{
+    width:4px!important;
+  }
+  .play-mode .pole-bear{
+    width:72px!important;
+    height:72px!important;
+    left:calc(50% - 10px)!important;
+  }
+
+  /* Hero's bottom UI is clear of both the copy and the plush characters. */
+  .play-mode .world-caption{
+    left:17px!important;
+    right:auto!important;
+    bottom:18px!important;
+    width:auto!important;
+    max-width:54%!important;
+    font-size:10px!important;
+    letter-spacing:.035em!important;
+    line-height:1.4!important;
+    gap:3px 8px!important;
+    box-shadow:none!important;
+    text-shadow:0 1px 7px #fffdf5!important;
+  }
+  .play-mode .scroll-cue{
+    display:flex!important;
+    left:auto!important;
+    right:17px!important;
+    bottom:89px!important;
+    transform:none!important;
+    gap:7px!important;
+    font-size:10px!important;
+    letter-spacing:.065em!important;
+    text-shadow:0 1px 8px #fffdf5!important;
+  }
+  .play-mode .world-controls{
+    right:16px!important;
+    bottom:14px!important;
+    z-index:15!important;
+  }
+  .play-mode .motion-toggle{
+    min-height:40px!important;
+    padding:9px 11px!important;
+    border-radius:999px!important;
+    font-size:11px!important;
+    background:rgba(255,251,246,.89)!important;
+  }
+
+  /* Reading navigation: horizontal swipe instead of clipped links. */
+  .play-mode .reading-nav{
+    height:58px!important;
+    min-width:0!important;
+    padding:0 14px!important;
+    justify-content:flex-start!important;
+    overflow:hidden!important;
+  }
+  .play-mode .reading-nav>div{
+    display:flex!important;
+    flex:1 1 auto!important;
+    width:100%!important;
+    min-width:0!important;
+    gap:20px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    flex-wrap:nowrap!important;
+    justify-content:flex-start!important;
+    scrollbar-width:none!important;
+    -webkit-overflow-scrolling:touch!important;
+    overscroll-behavior-x:contain!important;
+  }
+  .play-mode .reading-nav>div::-webkit-scrollbar{display:none!important}
+  .play-mode .reading-nav>div a:nth-child(3){display:inline-flex!important}
+  .play-mode .reading-nav a{
+    display:inline-flex!important;
+    align-items:center!important;
+    min-height:44px!important;
+    flex:0 0 auto!important;
+    font-size:12px!important;
+    line-height:1.3!important;
+    letter-spacing:.01em!important;
+    white-space:nowrap!important;
+  }
+  .play-mode .reading-nav .reading-resume{display:none!important}
+
+  /* The alternate résumé gets the same readable, full-width principles layout. */
+  .play-mode #about{
+    padding:70px 20px 106px!important;
+  }
+  .play-mode #about>p{
+    max-width:34ch!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    font-size:19px!important;
+    line-height:1.62!important;
+    text-align:left!important;
+  }
+  .play-mode .section-title h2{
+    font-size:clamp(36px,10.2vw,44px)!important;
+    line-height:1.14!important;
+  }
+  .play-mode .play-principles{
+    margin-top:30px!important;
+    width:100%!important;
+    min-width:0!important;
+  }
+  .play-mode .play-principles p{
+    display:grid!important;
+    grid-template-columns:32px minmax(0,1fr)!important;
+    column-gap:14px!important;
+    row-gap:7px!important;
+    align-items:start!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:20px 0!important;
+    font-size:15px!important;
+    line-height:1.7!important;
+  }
+  .play-mode .play-principles p>span:first-child{
+    grid-column:1!important;
+    grid-row:1!important;
+    margin-top:4px!important;
+    font-size:12px!important;
+    letter-spacing:.09em!important;
+  }
+  .play-mode .play-principles p>strong{
+    grid-column:2!important;
+    grid-row:1!important;
+    min-width:0!important;
+    font-size:21px!important;
+    line-height:1.4!important;
+  }
+  .play-mode .play-principles p>.play-principle-description{
+    grid-column:2!important;
+    grid-row:2!important;
+    min-width:0!important;
+    max-width:38ch!important;
+    margin:0!important;
+    color:#665b55!important;
+    font-family:'DM Sans',sans-serif!important;
+    font-size:15px!important;
+    font-weight:400!important;
+    line-height:1.7!important;
+    letter-spacing:normal!important;
+    text-transform:none!important;
+    overflow-wrap:break-word!important;
+  }
+  .play-mode .play-impact{
+    margin-top:44px!important;
+  }
+  .play-mode .play-impact-row{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:22px 14px!important;
+  }
+  .play-mode .play-impact-row>div{min-width:0!important}
+  .play-mode .play-impact-row strong{
+    font-size:clamp(28px,8vw,36px)!important;
+  }
+
+  /* Content cards, contact and logo rail use the available phone width. */
+  .play-mode .play-main section:not(.contact){
+    max-width:100%!important;
+  }
+  .play-mode .job,
+  .play-mode .card,
+  .play-mode .toolkit-group,
+  .play-mode .education-content{
+    min-width:0!important;
+  }
+  .play-mode .job ul{
+    overflow-wrap:break-word!important;
+  }
+  .play-mode .contact-links{
+    max-width:100%!important;
+    gap:12px!important;
+  }
+  .play-mode .contact-links a{
+    overflow-wrap:anywhere!important;
+    font-size:14px!important;
+  }
+  .play-mode .play-companies{
+    padding:60px 18px 72px!important;
+  }
+  .play-mode .play-companies-title strong{
+    font-size:clamp(23px,6vw,33px)!important;
+    line-height:1.15!important;
+  }
+  .play-mode .play-company-logos{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+  .play-mode .play-company-logos a{
+    min-width:0!important;
+    min-height:108px!important;
+    padding:12px!important;
+  }
+  .play-mode .play-company-logos img{
+    max-width:96%!important;
+    max-height:86px!important;
+  }
+  .play-mode .play-company-logos .logo-beaverton img{
+    max-height:96px!important;
+    object-fit:contain!important;
+  }
+  .play-mode footer{max-width:100%!important}
+}
+@media(max-width:380px){
+  .play-mode .hero{
+    padding:140px 16px 238px;
+    min-height:max(830px,100svh);
+  }
+  .play-mode .topbar{
+    left:16px;
+    right:16px;
+  }
+  .play-mode .brand{
+    font-size:13px!important;
+    letter-spacing:.025em!important;
+  }
+  .play-mode .rain-button{
+    font-size:10px!important;
+    gap:5px!important;
+  }
+  .play-mode .topnav a{
+    font-size:10px!important;
+    letter-spacing:.035em!important;
+  }
+  .play-mode .play-mastery-title{
+    font-size:clamp(34px,9.2vw,43px)!important;
+  }
+  .play-mode .play-mastery-summary{
+    font-size:15px!important;
+    line-height:1.6!important;
+  }
+  .play-mode .play-principles p{
+    grid-template-columns:28px minmax(0,1fr)!important;
+    column-gap:11px!important;
+  }
+  .play-mode .toy-near-right{display:none!important}
+  .play-mode .world-caption{max-width:52%!important;font-size:9px!important}
+  .play-mode .scroll-cue{font-size:9px!important}
+}
+@media(max-width:760px) and (prefers-reduced-motion:reduce){
+  .play-mode .toy-near-left,
+  .play-mode .toy-near-right{
+    animation:none!important;
+  }
+}
