@@ -2775,3 +2775,56 @@ body footer .mode-egg:focus-visible{
     animation:none!important;
   }
 }
+
+
+/* Complete company wordmarks in bear/Easter egg portfolio. */
+.play-mode .play-company-logos a.logo-wordmark{
+  overflow:hidden;
+  gap:10px!important;
+}
+.play-mode .play-company-logos a.logo-wordmark>img{
+  display:block;
+  width:auto!important;
+  height:auto!important;
+  max-width:95%!important;
+  max-height:70px!important;
+  object-fit:contain!important;
+}
+.play-mode .play-company-logos a.logo-stride .stride-lockup{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+.play-mode .play-company-logos a.logo-stride .stride-lockup-text{
+  font-size:clamp(14px,1.7vw,21px)!important;
+  line-height:1.15!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+}
+@media(max-width:760px){
+  .play-mode .play-company-logos a.logo-wordmark{
+    min-width:0!important;
+    padding:12px 9px!important;
+  }
+  .play-mode .play-company-logos a.logo-wordmark>img{
+    max-width:98%!important;
+    max-height:62px!important;
+  }
+  .play-mode .play-company-logos a.logo-stride .stride-lockup{
+    flex-direction:column!important;
+    gap:4px!important;
+  }
+  .play-mode .play-company-logos a.logo-stride .stride-lockup img{
+    width:30px!important;
+    height:30px!important;
+    max-width:30px!important;
+    max-height:30px!important;
+  }
+  .play-mode .play-company-logos a.logo-stride .stride-lockup-text{
+    font-size:14px!important;
+    text-align:center!important;
+  }
+}
