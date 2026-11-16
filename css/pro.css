@@ -1866,3 +1866,12 @@ body:not(.play-mode) .pro-principles .pro-principle-description{
     column-gap:12px!important;
   }
 }
+
+/* Varo: paid-media contribution, attributed external creative portfolio links */
+body:not(.play-mode) .varo-creative-case .varo-creative-mark{margin:18px 0 10px;max-width:190px}
+body:not(.play-mode) .varo-creative-case .varo-creative-mark img{display:block;width:min(130px,100%);height:auto;max-height:62px;object-fit:contain}
+body:not(.play-mode) .varo-creative-case .varo-creative-credit{margin-top:15px;color:#6c7e75;font-size:14px;line-height:1.68}
+body:not(.play-mode) .varo-creative-case .pro-work-actions{gap:10px 19px;align-items:baseline;flex-wrap:wrap}
+@media(max-width:760px){
+ body:not(.play-mode) .varo-creative-case .pro-work-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+}
